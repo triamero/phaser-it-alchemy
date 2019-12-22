@@ -1,0 +1,986 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "generation": 0,
+      "name": "Человек",
+      "points": 0
+    },
+    {
+      "id": 2,
+      "generation": 0,
+      "name": "Кофе",
+      "points": 0
+    },
+    {
+      "id": 3,
+      "generation": 0,
+      "name": "Ноль",
+      "points": 0
+    },
+    {
+      "id": 4,
+      "generation": 0,
+      "name": "Единица",
+      "points": 0
+    },
+    {
+      "id": 5,
+      "generation": 1,
+      "name": "Энергия",
+      "points": 5
+    },
+    {
+      "id": 6,
+      "generation": 1,
+      "name": "Бесконечность",
+      "points": 5
+    },
+    {
+      "id": 7,
+      "generation": 1,
+      "name": "Математика",
+      "points": 5
+    },
+    {
+      "id": 8,
+      "generation": 1,
+      "name": "Бит",
+      "points": 5
+    },
+    {
+      "id": 9,
+      "generation": 2,
+      "name": "Алгоритм",
+      "points": 7
+    },
+    {
+      "id": 10,
+      "generation": 2,
+      "name": "Электрон",
+      "points": 7
+    },
+    {
+      "id": 11,
+      "generation": 3,
+      "name": "Электричество",
+      "points": 11
+    },
+    {
+      "id": 12,
+      "generation": 2,
+      "name": "Измерение",
+      "points": 7
+    },
+    {
+      "id": 13,
+      "generation": 2,
+      "name": "Данные",
+      "points": 7
+    },
+    {
+      "id": 14,
+      "generation": 4,
+      "name": "Процессор",
+      "points": 17
+    },
+    {
+      "id": 15,
+      "generation": 3,
+      "name": "Data Structures",
+      "points": 11
+    },
+    {
+      "id": 16,
+      "generation": 3,
+      "name": "2D",
+      "points": 11
+    },
+    {
+      "id": 17,
+      "generation": 4,
+      "name": "3D",
+      "points": 17
+    },
+    {
+      "id": 18,
+      "generation": 5,
+      "name": "Время",
+      "points": 25
+    },
+    {
+      "id": 19,
+      "generation": 3,
+      "name": "Big Data",
+      "points": 11
+    },
+    {
+      "id": 20,
+      "generation": 4,
+      "name": "Table",
+      "points": 17
+    },
+    {
+      "id": 21,
+      "generation": 5,
+      "name": "Робот",
+      "points": 25
+    },
+    {
+      "id": 22,
+      "generation": 5,
+      "name": "Видеокарта",
+      "points": 25
+    },
+    {
+      "id": 23,
+      "generation": 4,
+      "name": "Spark",
+      "points": 17
+    },
+    {
+      "id": 24,
+      "generation": 6,
+      "name": "Компьютер",
+      "points": 35
+    },
+    {
+      "id": 25,
+      "generation": 4,
+      "name": "Пиксель",
+      "points": 17
+    },
+    {
+      "id": 26,
+      "generation": 5,
+      "name": "OLAP cube",
+      "points": 25
+    },
+    {
+      "id": 27,
+      "generation": 6,
+      "name": "Перерыв",
+      "points": 35
+    },
+    {
+      "id": 28,
+      "generation": 6,
+      "name": "Deadline",
+      "points": 35
+    },
+    {
+      "id": 29,
+      "generation": 6,
+      "name": "Complexity",
+      "points": 35
+    },
+    {
+      "id": 30,
+      "generation": 4,
+      "name": "Datascientist",
+      "points": 17
+    },
+    {
+      "id": 31,
+      "generation": 4,
+      "name": "Map reduce",
+      "points": 17
+    },
+    {
+      "id": 32,
+      "generation": 6,
+      "name": "Android",
+      "points": 35
+    },
+    {
+      "id": 33,
+      "generation": 6,
+      "name": "Кофемашина",
+      "points": 35
+    },
+    {
+      "id": 34,
+      "generation": 6,
+      "name": "Биткойн",
+      "points": 35
+    },
+    {
+      "id": 35,
+      "generation": 7,
+      "name": "Hardware Engineer",
+      "points": 47
+    },
+    {
+      "id": 36,
+      "generation": 7,
+      "name": "Узел",
+      "points": 47
+    },
+    {
+      "id": 37,
+      "generation": 7,
+      "name": "Квантовый компьютер",
+      "points": 47
+    },
+    {
+      "id": 38,
+      "generation": 7,
+      "name": "Datacenter",
+      "points": 47
+    },
+    {
+      "id": 39,
+      "generation": 5,
+      "name": "Картинка",
+      "points": 25
+    },
+    {
+      "id": 40,
+      "generation": 7,
+      "name": "Manager",
+      "points": 47
+    },
+    {
+      "id": 41,
+      "generation": 7,
+      "name": "O(n!)",
+      "points": 47
+    },
+    {
+      "id": 42,
+      "generation": 7,
+      "name": "Цукерберг",
+      "points": 47
+    },
+    {
+      "id": 43,
+      "generation": 7,
+      "name": "Satoshi Nakamoto",
+      "points": 47
+    },
+    {
+      "id": 44,
+      "generation": 7,
+      "name": "Pizza",
+      "points": 47
+    },
+    {
+      "id": 45,
+      "generation": 7,
+      "name": "Consensus",
+      "points": 47
+    },
+    {
+      "id": 46,
+      "generation": 8,
+      "name": "Сеть",
+      "points": 61
+    },
+    {
+      "id": 47,
+      "generation": 8,
+      "name": "Scrum Master",
+      "points": 61
+    },
+    {
+      "id": 48,
+      "generation": 8,
+      "name": "Кусочек",
+      "points": 61
+    },
+    {
+      "id": 49,
+      "generation": 1,
+      "name": "Сообщество",
+      "points": 5
+    },
+    {
+      "id": 50,
+      "generation": 3,
+      "name": "Текст",
+      "points": 11
+    },
+    {
+      "id": 51,
+      "generation": 4,
+      "name": "Код",
+      "points": 17
+    },
+    {
+      "id": 52,
+      "generation": 5,
+      "name": "Программист",
+      "points": 25
+    },
+    {
+      "id": 53,
+      "generation": 5,
+      "name": "CoffeeScript",
+      "points": 25
+    },
+    {
+      "id": 54,
+      "generation": 5,
+      "name": "Fortran",
+      "points": 25
+    },
+    {
+      "id": 55,
+      "generation": 6,
+      "name": "Java",
+      "points": 35
+    },
+    {
+      "id": 56,
+      "generation": 6,
+      "name": "F#",
+      "points": 35
+    },
+    {
+      "id": 57,
+      "generation": 6,
+      "name": "Программа",
+      "points": 35
+    },
+    {
+      "id": 58,
+      "generation": 6,
+      "name": "Опыт",
+      "points": 35
+    },
+    {
+      "id": 59,
+      "generation": 6,
+      "name": "Компьютерные игры",
+      "points": 35
+    },
+    {
+      "id": 60,
+      "generation": 7,
+      "name": "IT",
+      "points": 47
+    },
+    {
+      "id": 61,
+      "generation": 9,
+      "name": "Системный администратор",
+      "points": 77
+    },
+    {
+      "id": 62,
+      "generation": 8,
+      "name": "Cman",
+      "points": 61
+    },
+    {
+      "id": 63,
+      "generation": 6,
+      "name": "Habr",
+      "points": 35
+    },
+    {
+      "id": 64,
+      "generation": 6,
+      "name": "Баг",
+      "points": 35
+    },
+    {
+      "id": 65,
+      "generation": 5,
+      "name": "GitHub",
+      "points": 25
+    },
+    {
+      "id": 66,
+      "generation": 8,
+      "name": "Data Driven Company",
+      "points": 61
+    },
+    {
+      "id": 67,
+      "generation": 8,
+      "name": "Додо",
+      "points": 61
+    },
+    {
+      "id": 68,
+      "generation": 7,
+      "name": "Error",
+      "points": 47
+    },
+    {
+      "id": 69,
+      "generation": 7,
+      "name": "Middle",
+      "points": 47
+    },
+    {
+      "id": 70,
+      "generation": 8,
+      "name": "Senior",
+      "points": 61
+    },
+    {
+      "id": 71,
+      "generation": 7,
+      "name": "Геймер",
+      "points": 47
+    },
+    {
+      "id": 72,
+      "generation": 7,
+      "name": "Пользователь",
+      "points": 47
+    },
+    {
+      "id": 73,
+      "generation": 7,
+      "name": "Интерфейс",
+      "points": 47
+    },
+    {
+      "id": 74,
+      "generation": 7,
+      "name": "Документация",
+      "points": 47
+    },
+    {
+      "id": 75,
+      "generation": 6,
+      "name": "Open Source",
+      "points": 35
+    },
+    {
+      "id": 76,
+      "generation": 9,
+      "name": "Интернет",
+      "points": 77
+    },
+    {
+      "id": 77,
+      "generation": 5,
+      "name": "Assembler",
+      "points": 25
+    },
+    {
+      "id": 78,
+      "generation": 5,
+      "name": "SQL",
+      "points": 25
+    },
+    {
+      "id": 79,
+      "generation": 6,
+      "name": "Legacy",
+      "points": 35
+    },
+    {
+      "id": 80,
+      "generation": 6,
+      "name": "Парное программирование",
+      "points": 35
+    },
+    {
+      "id": 81,
+      "generation": 10,
+      "name": "Script",
+      "points": 95
+    },
+    {
+      "id": 82,
+      "generation": 7,
+      "name": "Тестировщик",
+      "points": 47
+    },
+    {
+      "id": 83,
+      "generation": 7,
+      "name": "Тесты",
+      "points": 47
+    },
+    {
+      "id": 84,
+      "generation": 8,
+      "name": "QA",
+      "points": 61
+    },
+    {
+      "id": 85,
+      "generation": 8,
+      "name": "UX",
+      "points": 61
+    },
+    {
+      "id": 86,
+      "generation": 7,
+      "name": "Компилятор",
+      "points": 47
+    },
+    {
+      "id": 87,
+      "generation": 8,
+      "name": "C",
+      "points": 61
+    },
+    {
+      "id": 88,
+      "generation": 9,
+      "name": "C++",
+      "points": 77
+    },
+    {
+      "id": 89,
+      "generation": 7,
+      "name": "Stallman",
+      "points": 47
+    },
+    {
+      "id": 90,
+      "generation": 6,
+      "name": "Basic",
+      "points": 35
+    }
+  ],
+  "blueprints": [
+    {
+      "firstId": 1,
+      "secondId": 2,
+      "resultId": 5
+    },
+    {
+      "firstId": 3,
+      "secondId": 3,
+      "resultId": 6
+    },
+    {
+      "firstId": 4,
+      "secondId": 4,
+      "resultId": 7
+    },
+    {
+      "firstId": 3,
+      "secondId": 4,
+      "resultId": 8
+    },
+    {
+      "firstId": 7,
+      "secondId": 1,
+      "resultId": 9
+    },
+    {
+      "firstId": 5,
+      "secondId": 4,
+      "resultId": 10
+    },
+    {
+      "firstId": 10,
+      "secondId": 10,
+      "resultId": 11
+    },
+    {
+      "firstId": 6,
+      "secondId": 6,
+      "resultId": 12
+    },
+    {
+      "firstId": 8,
+      "secondId": 8,
+      "resultId": 13
+    },
+    {
+      "firstId": 9,
+      "secondId": 11,
+      "resultId": 14
+    },
+    {
+      "firstId": 9,
+      "secondId": 13,
+      "resultId": 15
+    },
+    {
+      "firstId": 12,
+      "secondId": 12,
+      "resultId": 16
+    },
+    {
+      "firstId": 16,
+      "secondId": 12,
+      "resultId": 17
+    },
+    {
+      "firstId": 17,
+      "secondId": 12,
+      "resultId": 18
+    },
+    {
+      "firstId": 13,
+      "secondId": 13,
+      "resultId": 19
+    },
+    {
+      "firstId": 13,
+      "secondId": 16,
+      "resultId": 20
+    },
+    {
+      "firstId": 14,
+      "secondId": 1,
+      "resultId": 21
+    },
+    {
+      "firstId": 14,
+      "secondId": 14,
+      "resultId": 22
+    },
+    {
+      "firstId": 19,
+      "secondId": 9,
+      "resultId": 23
+    },
+    {
+      "firstId": 14,
+      "secondId": 22,
+      "resultId": 24
+    },
+    {
+      "firstId": 16,
+      "secondId": 8,
+      "resultId": 25
+    },
+    {
+      "firstId": 17,
+      "secondId": 19,
+      "resultId": 26
+    },
+    {
+      "firstId": 18,
+      "secondId": 2,
+      "resultId": 27
+    },
+    {
+      "firstId": 18,
+      "secondId": 3,
+      "resultId": 28
+    },
+    {
+      "firstId": 18,
+      "secondId": 9,
+      "resultId": 29
+    },
+    {
+      "firstId": 19,
+      "secondId": 1,
+      "resultId": 30
+    },
+    {
+      "firstId": 19,
+      "secondId": 9,
+      "resultId": 31
+    },
+    {
+      "firstId": 21,
+      "secondId": 1,
+      "resultId": 32
+    },
+    {
+      "firstId": 21,
+      "secondId": 2,
+      "resultId": 33
+    },
+    {
+      "firstId": 22,
+      "secondId": 22,
+      "resultId": 34
+    },
+    {
+      "firstId": 1,
+      "secondId": 24,
+      "resultId": 35
+    },
+    {
+      "firstId": 24,
+      "secondId": 4,
+      "resultId": 36
+    },
+    {
+      "firstId": 24,
+      "secondId": 10,
+      "resultId": 37
+    },
+    {
+      "firstId": 24,
+      "secondId": 24,
+      "resultId": 38
+    },
+    {
+      "firstId": 25,
+      "secondId": 25,
+      "resultId": 39
+    },
+    {
+      "firstId": 1,
+      "secondId": 28,
+      "resultId": 40
+    },
+    {
+      "firstId": 29,
+      "secondId": 6,
+      "resultId": 41
+    },
+    {
+      "firstId": 32,
+      "secondId": 1,
+      "resultId": 42
+    },
+    {
+      "firstId": 34,
+      "secondId": 1,
+      "resultId": 43
+    },
+    {
+      "firstId": 34,
+      "secondId": 4,
+      "resultId": 44
+    },
+    {
+      "firstId": 34,
+      "secondId": 9,
+      "resultId": 45
+    },
+    {
+      "firstId": 36,
+      "secondId": 36,
+      "resultId": 46
+    },
+    {
+      "firstId": 40,
+      "secondId": 2,
+      "resultId": 47
+    },
+    {
+      "firstId": 44,
+      "secondId": 8,
+      "resultId": 48
+    },
+    {
+      "firstId": 1,
+      "secondId": 1,
+      "resultId": 49
+    },
+    {
+      "firstId": 49,
+      "secondId": 13,
+      "resultId": 50
+    },
+    {
+      "firstId": 50,
+      "secondId": 9,
+      "resultId": 51
+    },
+    {
+      "firstId": 51,
+      "secondId": 1,
+      "resultId": 52
+    },
+    {
+      "firstId": 51,
+      "secondId": 2,
+      "resultId": 53
+    },
+    {
+      "firstId": 51,
+      "secondId": 7,
+      "resultId": 54
+    },
+    {
+      "firstId": 52,
+      "secondId": 2,
+      "resultId": 55
+    },
+    {
+      "firstId": 52,
+      "secondId": 7,
+      "resultId": 56
+    },
+    {
+      "firstId": 52,
+      "secondId": 9,
+      "resultId": 57
+    },
+    {
+      "firstId": 52,
+      "secondId": 18,
+      "resultId": 58
+    },
+    {
+      "firstId": 52,
+      "secondId": 22,
+      "resultId": 59
+    },
+    {
+      "firstId": 52,
+      "secondId": 14,
+      "resultId": 35
+    },
+    {
+      "firstId": 52,
+      "secondId": 24,
+      "resultId": 60
+    },
+    {
+      "firstId": 52,
+      "secondId": 46,
+      "resultId": 61
+    },
+    {
+      "firstId": 44,
+      "secondId": 52,
+      "resultId": 62
+    },
+    {
+      "firstId": 52,
+      "secondId": 50,
+      "resultId": 63
+    },
+    {
+      "firstId": 52,
+      "secondId": 51,
+      "resultId": 64
+    },
+    {
+      "firstId": 49,
+      "secondId": 51,
+      "resultId": 65
+    },
+    {
+      "firstId": 60,
+      "secondId": 19,
+      "resultId": 66
+    },
+    {
+      "firstId": 60,
+      "secondId": 44,
+      "resultId": 67
+    },
+    {
+      "firstId": 64,
+      "secondId": 57,
+      "resultId": 68
+    },
+    {
+      "firstId": 52,
+      "secondId": 58,
+      "resultId": 69
+    },
+    {
+      "firstId": 69,
+      "secondId": 58,
+      "resultId": 70
+    },
+    {
+      "firstId": 59,
+      "secondId": 1,
+      "resultId": 71
+    },
+    {
+      "firstId": 57,
+      "secondId": 1,
+      "resultId": 72
+    },
+    {
+      "firstId": 57,
+      "secondId": 39,
+      "resultId": 73
+    },
+    {
+      "firstId": 57,
+      "secondId": 50,
+      "resultId": 74
+    },
+    {
+      "firstId": 65,
+      "secondId": 52,
+      "resultId": 75
+    },
+    {
+      "firstId": 46,
+      "secondId": 24,
+      "resultId": 76
+    },
+    {
+      "firstId": 51,
+      "secondId": 14,
+      "resultId": 77
+    },
+    {
+      "firstId": 51,
+      "secondId": 13,
+      "resultId": 78
+    },
+    {
+      "firstId": 51,
+      "secondId": 18,
+      "resultId": 79
+    },
+    {
+      "firstId": 52,
+      "secondId": 52,
+      "resultId": 80
+    },
+    {
+      "firstId": 61,
+      "secondId": 51,
+      "resultId": 81
+    },
+    {
+      "firstId": 64,
+      "secondId": 1,
+      "resultId": 82
+    },
+    {
+      "firstId": 64,
+      "secondId": 51,
+      "resultId": 83
+    },
+    {
+      "firstId": 82,
+      "secondId": 82,
+      "resultId": 84
+    },
+    {
+      "firstId": 73,
+      "secondId": 72,
+      "resultId": 85
+    },
+    {
+      "firstId": 77,
+      "secondId": 57,
+      "resultId": 86
+    },
+    {
+      "firstId": 86,
+      "secondId": 77,
+      "resultId": 87
+    },
+    {
+      "firstId": 87,
+      "secondId": 87,
+      "resultId": 88
+    },
+    {
+      "firstId": 52,
+      "secondId": 75,
+      "resultId": 89
+    },
+    {
+      "firstId": 77,
+      "secondId": 1,
+      "resultId": 90
+    },
+    {
+      "firstId": 77,
+      "secondId": 29,
+      "resultId": 87
+    }
+  ]
+}

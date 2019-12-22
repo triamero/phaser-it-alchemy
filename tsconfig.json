@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "es2015",
+    "module": "commonjs",
+    "strict": true,
+    "moduleResolution": "node",
+    "baseUrl": "./src",
+    "paths": {
+      "@it/*": [
+        "./*"
+      ]
+    },
+    "typeRoots": [
+      "node_modules/@types",
+      "src/typings"
+    ]
+  }
+}
