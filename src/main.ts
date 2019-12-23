@@ -1,12 +1,22 @@
 import * as Phaser from "phaser";
 import {BootScene, GameScene, HudScene} from "./scenes";
+import {IngredientPlugin} from "./game-objects";
 
 class Main extends Phaser.Game {
     constructor() {
         const config: Phaser.Types.Core.GameConfig = {
             type: Phaser.AUTO,
             width: 600,
-            height: 800
+            height: 800,
+            plugins: {
+                global: [
+                    {
+                        key: "IngredientPlugin",
+                        plugin: IngredientPlugin,
+                        start: true
+                    }
+                ]
+            }
         };
         super(config);
 
