@@ -539,6 +539,150 @@
       "generation": 6,
       "name": "Basic",
       "points": 35
+    },
+    {
+      "id": 91,
+      "generation": 7,
+      "name": "MS-DOS",
+      "points": 47
+    },
+    {
+      "id": 92,
+      "generation": 8,
+      "name": "Windows",
+      "points": 61
+    },
+    {
+      "id": 93,
+      "generation": 9,
+      "name": "Bill Gates",
+      "points": 77
+    },
+    {
+      "id": 94,
+      "generation": 10,
+      "name": "Microsoft",
+      "points": 95
+    },
+    {
+      "id": 95,
+      "generation": 9,
+      "name": "Linux",
+      "points": 77
+    },
+    {
+      "id": 96,
+      "generation": 10,
+      "name": "Линус Торвальдс",
+      "points": 95
+    },
+    {
+      "id": 97,
+      "generation": 9,
+      "name": "Экран",
+      "points": 77
+    },
+    {
+      "id": 98,
+      "generation": 10,
+      "name": "Facebook",
+      "points": 95
+    },
+    {
+      "id": 99,
+      "generation": 11,
+      "name": "Visual Studio",
+      "points": 115
+    },
+    {
+      "id": 100,
+      "generation": 11,
+      "name": ".NET",
+      "points": 115
+    },
+    {
+      "id": 101,
+      "generation": 10,
+      "name": "Облака",
+      "points": 95
+    },
+    {
+      "id": 102,
+      "generation": 11,
+      "name": "Azure",
+      "points": 115
+    },
+    {
+      "id": 103,
+      "generation": 11,
+      "name": "Docker",
+      "points": 115
+    },
+    {
+      "id": 104,
+      "generation": 12,
+      "name": "Kubernetes",
+      "points": 137
+    },
+    {
+      "id": 105,
+      "generation": 13,
+      "name": "SRE",
+      "points": 161
+    },
+    {
+      "id": 106,
+      "generation": 12,
+      "name": "C#",
+      "points": 137
+    },
+    {
+      "id": 107,
+      "generation": 13,
+      "name": "Рихтер",
+      "points": 161
+    },
+    {
+      "id": 108,
+      "generation": 13,
+      "name": "Holywar",
+      "points": 161
+    },
+    {
+      "id": 109,
+      "generation": 10,
+      "name": "HTML",
+      "points": 95
+    },
+    {
+      "id": 110,
+      "generation": 10,
+      "name": "JavaScript",
+      "points": 95
+    },
+    {
+      "id": 111,
+      "generation": 10,
+      "name": "Сайт",
+      "points": 95
+    },
+    {
+      "id": 112,
+      "generation": 11,
+      "name": "dodopizza.ru",
+      "points": 115
+    },
+    {
+      "id": 113,
+      "generation": 13,
+      "name": "Backend",
+      "points": 161
+    },
+    {
+      "id": 114,
+      "generation": 11,
+      "name": "Frontend",
+      "points": 115
     }
   ],
   "blueprints": [
@@ -981,6 +1125,141 @@
       "firstId": 77,
       "secondId": 29,
       "resultId": 87
+    },
+    {
+      "firstId": 90,
+      "secondId": 24,
+      "resultId": 91
+    },
+    {
+      "firstId": 91,
+      "secondId": 73,
+      "resultId": 92
+    },
+    {
+      "firstId": 92,
+      "secondId": 1,
+      "resultId": 93
+    },
+    {
+      "firstId": 93,
+      "secondId": 92,
+      "resultId": 94
+    },
+    {
+      "firstId": 92,
+      "secondId": 75,
+      "resultId": 95
+    },
+    {
+      "firstId": 95,
+      "secondId": 52,
+      "resultId": 96
+    },
+    {
+      "firstId": 92,
+      "secondId": 24,
+      "resultId": 97
+    },
+    {
+      "firstId": 97,
+      "secondId": 8,
+      "resultId": 25
+    },
+    {
+      "firstId": 42,
+      "secondId": 76,
+      "resultId": 98
+    },
+    {
+      "firstId": 88,
+      "secondId": 94,
+      "resultId": 99
+    },
+    {
+      "firstId": 94,
+      "secondId": 55,
+      "resultId": 100
+    },
+    {
+      "firstId": 76,
+      "secondId": 1,
+      "resultId": 72
+    },
+    {
+      "firstId": 76,
+      "secondId": 38,
+      "resultId": 101
+    },
+    {
+      "firstId": 101,
+      "secondId": 94,
+      "resultId": 102
+    },
+    {
+      "firstId": 101,
+      "secondId": 95,
+      "resultId": 103
+    },
+    {
+      "firstId": 103,
+      "secondId": 101,
+      "resultId": 104
+    },
+    {
+      "firstId": 104,
+      "secondId": 52,
+      "resultId": 105
+    },
+    {
+      "firstId": 103,
+      "secondId": 103,
+      "resultId": 104
+    },
+    {
+      "firstId": 100,
+      "secondId": 51,
+      "resultId": 106
+    },
+    {
+      "firstId": 106,
+      "secondId": 52,
+      "resultId": 107
+    },
+    {
+      "firstId": 106,
+      "secondId": 55,
+      "resultId": 108
+    },
+    {
+      "firstId": 50,
+      "secondId": 76,
+      "resultId": 109
+    },
+    {
+      "firstId": 76,
+      "secondId": 51,
+      "resultId": 110
+    },
+    {
+      "firstId": 76,
+      "secondId": 57,
+      "resultId": 111
+    },
+    {
+      "firstId": 111,
+      "secondId": 67,
+      "resultId": 112
+    },
+    {
+      "firstId": 111,
+      "secondId": 106,
+      "resultId": 113
+    },
+    {
+      "firstId": 110,
+      "secondId": 52,
+      "resultId": 114
     }
   ]
 }

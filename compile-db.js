@@ -75,7 +75,7 @@ function parseRow(row) {
 
     const splits = row.split("=");
 
-    const ingredients = splits[0].split("+");
+    const ingredients = splits[0].split(" + ");
     const result = splits[1].trim();
 
     const first = ingredients[0].trim();
