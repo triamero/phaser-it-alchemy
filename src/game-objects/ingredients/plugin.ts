@@ -9,10 +9,10 @@ export class IngredientPlugin extends Phaser.Plugins.BasePlugin {
         pluginManager.registerGameObject("ingredient", this.createIngredient);
     }
 
-    createIngredient(x: number, y: number, texture: string) {
+    createIngredient(x: number, y: number, texture: string, name: string) {
 
         const me: any = this;
 
-        return me.displayList.add(new IngredientGameObject(me.scene, x, y, texture));
+        return me.displayList.add(new IngredientGameObject(me.scene, x, y, texture, name));
     }
 }

@@ -3,7 +3,6 @@ import {Db} from "@it/shared";
 
 export class HudScene extends Phaser.Scene {
 
-    private _points: number = 1234;
     private _opened: number[] = [0, 127];
 
     // @ts-ignore
@@ -31,30 +30,17 @@ export class HudScene extends Phaser.Scene {
         this._label2 = this.add.text(0, 2, "[Opened:0/0]", {fontFamily: '"Roboto Condensed"', fontSize: "26px"});
         this.add.container(400, 30, [rect1, this._label1]);
         this.add.container(400, 59, [rect2, this._label2]);
-    }
 
-    create() {
-        console.log("create hud");
-
-        const db: Db = this.cache.json.get("db");
-        const opened: number[] = this.cache.obj.get("opened");
-
-        this._opened = [opened.length, db.items.length];
+        console.log("preload hud completed");
     }
 
 
     update() {
 
-        if (this._points < 1600) {
-            this._points++;
-            this._label1.setText(`[Points:${this._points}]`);
-        }
-        if (this._opened[0] < this._opened[1]) {
-            const min = this._opened[0] + 1;
-            this._opened[0] = min;
+        const points = this.cache.obj.get("points");
+        const opened = this.cache.obj.get("opened");
 
-            this._label2.setText(`[Opened:${this._opened[0]}/${this._opened[1]}]`);
-        }
-
+        this._label1.setText(`[Points:${points}]`);
+        this._label2.setText(`[Opened:${opened[0]}/${opened[1]}]`);
     }
 }

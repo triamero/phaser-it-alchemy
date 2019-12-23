@@ -1,10 +1,11 @@
 import * as Phaser from "phaser";
+import {Db} from "@it/shared";
 
 export class BootScene extends Phaser.Scene {
     init() {
         console.log("Booting...");
 
-        let value = localStorage.getItem("opened");
+        let value = localStorage.getItem("openedIds");
 
         if (!value) {
             value = "[]";
@@ -19,9 +20,9 @@ export class BootScene extends Phaser.Scene {
             opened.push(4);
         }
 
-        this.cache.obj.add("opened", opened);
+        this.cache.obj.add("openedIds", opened);
 
-        localStorage.setItem("opened", JSON.stringify(opened));
+        localStorage.setItem("openedIds", JSON.stringify(opened));
 
         console.log("Booting completed");
     }
@@ -30,10 +31,22 @@ export class BootScene extends Phaser.Scene {
         console.log("Load things necessary during preload scene");
 
         this.load.json("db", "db.json");
-
     }
 
     create() {
+
+        const db: Db = this.cache.json.get("db");
+
+        const openedIds: number[] = this.cache.obj.get("openedIds");
+
+        const points = openedIds
+            .map(x => db.items.find(z => z.id === x))
+            .map(x => x.points)
+            .reduce((prev, curr) => prev + curr);
+
+        this.cache.obj.add("points", points);
+        this.cache.obj.add("opened", [openedIds.length, db.items.length]);
+
         this.scene.start("game");
     }
 }
