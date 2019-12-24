@@ -3,11 +3,7 @@ import {Db} from "@it/shared";
 
 export class HudScene extends Phaser.Scene {
 
-    private _opened: number[] = [0, 127];
-
-    // @ts-ignore
     private _label1: Phaser.GameObjects.Text = null;
-    // @ts-ignore
     private _label2: Phaser.GameObjects.Text = null;
 
     preload() {
@@ -26,8 +22,8 @@ export class HudScene extends Phaser.Scene {
         const rect1 = this.add.rectangle(400, 30, 200, 30);
         const rect2 = this.add.rectangle(400, 59, 200, 30);
 
-        this._label1 = this.add.text(0, 2, "[Points:0]", {fontFamily: '"Roboto Condensed"', fontSize: "26px"});
-        this._label2 = this.add.text(0, 2, "[Opened:0/0]", {fontFamily: '"Roboto Condensed"', fontSize: "26px"});
+        this._label1 = this.add.text(0, 2, "[Points:0]", {fontFamily: '"Consolas"', fontSize: "26px"});
+        this._label2 = this.add.text(0, 2, "[Opened:0/0]", {fontFamily: '"Consolas"', fontSize: "26px"});
         this.add.container(400, 30, [rect1, this._label1]);
         this.add.container(400, 59, [rect2, this._label2]);
 

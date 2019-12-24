@@ -4,25 +4,29 @@
       "id": 1,
       "generation": 0,
       "name": "Человек",
-      "points": 0
+      "points": 0,
+      "texture": "human"
     },
     {
       "id": 2,
       "generation": 0,
       "name": "Кофе",
-      "points": 0
+      "points": 0,
+      "texture": "coffee"
     },
     {
       "id": 3,
       "generation": 0,
       "name": "Ноль",
-      "points": 0
+      "points": 0,
+      "texture": "zero"
     },
     {
       "id": 4,
       "generation": 0,
       "name": "Единица",
-      "points": 0
+      "points": 0,
+      "texture": "one"
     },
     {
       "id": 5,
@@ -34,13 +38,15 @@
       "id": 6,
       "generation": 1,
       "name": "Бесконечность",
-      "points": 5
+      "points": 5,
+      "texture": "infinity"
     },
     {
       "id": 7,
       "generation": 1,
       "name": "Математика",
-      "points": 5
+      "points": 5,
+      "texture": "mathematics"
     },
     {
       "id": 8,
@@ -76,7 +82,8 @@
       "id": 13,
       "generation": 2,
       "name": "Данные",
-      "points": 7
+      "points": 7,
+      "texture": "data"
     },
     {
       "id": 14,

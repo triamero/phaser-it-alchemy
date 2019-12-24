@@ -3,4 +3,5 @@ export interface Item {
     name: string;
     generation: number;
     points: number;
+    texture: string;
 }

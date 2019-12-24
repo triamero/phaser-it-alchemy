@@ -1,8 +1,11 @@
 import * as Phaser from "phaser";
-import {Db} from "@it/shared";
+import {Db, Item} from "@it/shared";
 import {IngredientGameObject} from "@it/game-objects";
+import {AnvilScene} from "./anvil.scene";
 
 export class GameScene extends Phaser.Scene {
+
+    private _anvilScene: AnvilScene = null;
 
     private _opened: number[] = [];
 
@@ -14,22 +17,27 @@ export class GameScene extends Phaser.Scene {
     private _firstContainer: Phaser.GameObjects.Container = null;
     private _secondContainer: Phaser.GameObjects.Container = null;
 
+    private _ingredients: IngredientGameObject[] = [];
+
     init() {
         this._db = this.cache.json.get("db");
     }
 
     preload() {
-        this.scene.launch("hud");
+        const hud = this.scene.launch("hud");
+        this._anvilScene = <AnvilScene>this.scene.launch("anvil").scene;
 
         this._opened = this.cache.obj.get("opened");
-
 
         this.load.tilemapTiledJSON("game", "assets/alchemy.json");
         this.load.image("game-tilemap", "assets/tilebag.png");
     }
 
-    create() {
-        const map = this.make.tilemap({key: "game", height: 800, width: 600});
+    protected create() {
+
+        const me: any = this;
+
+        const map = this.make.tilemap({key: "game", height: +this.game.config.height, width: +this.game.config.width});
 
         const tileset = map.addTilesetImage("tilebag", "game-tilemap", 90, 90);
 
@@ -40,32 +48,24 @@ export class GameScene extends Phaser.Scene {
 
         const rect2 = this.add.rectangle(0, 0, 100, 100, 0x0d084c);
 
-        this._firstContainer = this.add.container(60, 200, [rect1]);
-        this._secondContainer = this.add.container(500, 200, [rect2]);
+        this._firstContainer = this.add.container(500, 500, [rect1]);
+        this._secondContainer = this.add.container(500, 500, [rect2]);
 
         const opened: number[] = this.cache.obj.get("openedIds");
 
-        opened.forEach((x: number, index: number) => {
-            const item = this._db.items.find(i => i.id === x);
+        this._ingredients = opened
+            .map(x => this._db.items.find(i => i.id === x))
+            .map((x: Item, index: number) => {
+                const place = this.getNextPlace(index);
 
-            const place = this.getNextPlace(index);
+                const ingredient: IngredientGameObject = me.add.ingredient(place[0], place[1], x.texture, x.name, x.id);
+                ingredient.setSize(90, 90);
+                ingredient.setInteractive();
 
-            const ingredient: IngredientGameObject = (<any>this.add).ingredient(place[0], place[1], item.name, item.name);
+                ingredient.on("pointerup", this.onClickIngredient);
 
-            ingredient.setSize(25, 25);
-            ingredient.setInteractive();
-
-            ingredient.on("pointerup", () => {
-                console.log("clicked");
-
-                if (this._firstId === 0) {
-
-                    this._firstId = item.id;
-                } else {
-                    this._secondId = item.id;
-                }
+                return ingredient;
             });
-        });
     }
 
 
@@ -88,6 +88,54 @@ export class GameScene extends Phaser.Scene {
         }
     }
 
+    private onClickIngredient() {
+
+        const scene = <any>this.scene;
+
+        const me = <IngredientGameObject><any>this;
+
+        const myClone = scene.add.tweenIngredient(me.x, me.y, me.texture);
+        myClone.bringToTop();
+
+        let anvil: number[] = scene.cache.obj.get("anvil");
+
+        if (!anvil) {
+            anvil = [];
+        }
+
+        let x = 75;
+        let y = 175;
+
+        if (anvil.length > 0) {
+            x = 525;
+            y = 175;
+        }
+
+        const tween = scene.tweens.add({
+            targets: [myClone],
+            duration: 600,
+            x: x,
+            y: y,
+            ease: "Power2",
+            onComplete: (tween: Phaser.Tweens.Tween) => {
+                console.log("tween completed");
+
+                //debugger;
+
+                let anvil: number[] = scene.cache.obj.get("anvil");
+
+                if (!anvil) {
+                    anvil = [];
+                }
+
+                anvil.push(me.id);
+
+                scene.cache.obj.add("anvil", anvil);
+            }
+        });
+        console.log(scene.getNextPlace(1));
+    }
+
     private getNextPlace(index: number): number[] {
 
         const horizontalPosition = index % 6;
@@ -97,4 +145,3 @@ export class GameScene extends Phaser.Scene {
 
     }
 }
-

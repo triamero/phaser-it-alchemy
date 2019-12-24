@@ -28,9 +28,12 @@ export class BootScene extends Phaser.Scene {
     }
 
     preload() {
-        console.log("Load things necessary during preload scene");
-
         this.load.json("db", "db.json");
+        this.load.image("human", "assets/human.png");
+        this.load.image("coffee", "assets/coffee.png");
+        this.load.image("zero", "assets/zero.png");
+        this.load.image("one", "assets/one.png");
+        this.load.image("mathematics", "assets/mathematics.png");
     }
 
     create() {
