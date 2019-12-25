@@ -5,691 +5,791 @@
       "generation": 0,
       "name": "Человек",
       "points": 0,
-      "texture": "human"
+      "texture": "human",
+      "description": "Man, njeriu, osoba, людина, нафар, homo и вот это всё."
     },
     {
       "id": 2,
       "generation": 0,
       "name": "Кофе",
       "points": 0,
-      "texture": "coffee"
+      "texture": "coffee",
+      "description": "Состоит из 1200+ химических соединений, 1/2 из них отвечает за вкусовые качества напитка."
     },
     {
       "id": 3,
       "generation": 0,
       "name": "Ноль",
       "points": 0,
-      "texture": "zero"
+      "texture": "zero",
+      "description": "Самый нейстральный элемент математики и вселенной."
     },
     {
       "id": 4,
       "generation": 0,
       "name": "Единица",
       "points": 0,
-      "texture": "one"
+      "texture": "one",
+      "description": "Наименьшее натуральное число и правдивая сущность бита."
     },
     {
       "id": 5,
       "generation": 1,
       "name": "Энергия",
-      "points": 5
+      "points": 5,
+      "texture": "energy",
+      "description": "Из-за её конечности мы не можем фигачить по 24/7, поэтому приходится фигачить только по 18/7"
     },
     {
       "id": 6,
       "generation": 1,
       "name": "Бесконечность",
       "points": 5,
-      "texture": "infinity"
+      "texture": "infinity",
+      "description": "Можно ли делить на ноль? Давайте попробуем"
     },
     {
       "id": 7,
       "generation": 1,
       "name": "Математика",
       "points": 5,
-      "texture": "mathematics"
+      "texture": "mathematics",
+      "description": "Отрицательные числа изобрели должники в XIII веке, а знак равенства появился в XVI веке"
     },
     {
       "id": 8,
       "generation": 1,
       "name": "Бит",
-      "points": 5
+      "points": 5,
+      "texture": "bit",
+      "description": "Двоичный алгоритм вероятности равновероятностных событий или сумма произведений вероятности на двоичный логарифм вероятности при равновероятных событиях"
     },
     {
       "id": 9,
       "generation": 2,
       "name": "Алгоритм",
-      "points": 7
+      "points": 7,
+      "texture": "algorithm",
+      "description": "В самом коротком алгоритме сборки кубика Рубика всего 20 шагов"
     },
     {
       "id": 10,
       "generation": 2,
       "name": "Электрон",
-      "points": 7
+      "points": 7,
+      "texture": "electron",
+      "description": "Масса электрона равна примерно 9 * 10-31 кг = 0.000 000 000 000 000 000 000 000 000 000 9кг"
     },
     {
       "id": 11,
       "generation": 3,
       "name": "Электричество",
-      "points": 11
+      "points": 11,
+      "texture": "electricity",
+      "description": "Электричество везде одинаковое, но напряжение разное. Поэтому в мире существует 13 типов штепселей"
     },
     {
       "id": 12,
       "generation": 2,
       "name": "Измерение",
-      "points": 7
+      "points": 7,
+      "texture": "dimension",
+      "description": "Хранит в себе одновременно максимум абстракции и столько же конкретики"
     },
     {
       "id": 13,
       "generation": 2,
       "name": "Данные",
       "points": 7,
-      "texture": "data"
+      "texture": "data",
+      "description": "Пылинки в луче солнца, CVV, цвет учебника по Сопромату за 1986 год, всё это и всё остальное во вселенной"
     },
     {
       "id": 14,
       "generation": 4,
       "name": "Процессор",
-      "points": 17
+      "points": 17,
+      "texture": "cpu",
+      "description": "Самый маленький размером с крупинку морской соли"
     },
     {
       "id": 15,
       "generation": 3,
       "name": "Data Structures",
-      "points": 11
+      "points": 11,
+      "texture": "data-structures",
+      "description": "В этой игре использовалось дерево"
     },
     {
       "id": 16,
       "generation": 3,
       "name": "2D",
-      "points": 11
+      "points": 11,
+      "texture": "2d",
+      "description": "Наша Земля, по версии Flat Earth Society"
     },
     {
       "id": 17,
       "generation": 4,
       "name": "3D",
-      "points": 17
+      "points": 17,
+      "texture": "3d",
+      "description": "Всё становится лучше с дополнительным измерением"
     },
     {
       "id": 18,
       "generation": 5,
       "name": "Время",
-      "points": 25
+      "points": 25,
+      "texture": "time",
+      "description": "Течение времени в обратную сторону - явление в физике, полностью равносильное обычному его течению"
     },
     {
       "id": 19,
       "generation": 3,
       "name": "Big Data",
-      "points": 11
+      "points": 11,
+      "texture": "big-data",
+      "description": "Структурированные (и не очень) данные огромного объема или buzzword последних лет?"
     },
     {
       "id": 20,
       "generation": 4,
       "name": "Table",
-      "points": 17
+      "points": 17,
+      "texture": "table",
+      "description": "У каждого должна быть своя табличка с табличками, как и пакет с пакетами"
     },
     {
       "id": 21,
       "generation": 5,
       "name": "Робот",
-      "points": 25
+      "points": 25,
+      "texture": "robot",
+      "description": "Маленькие (и не очень) помощники человека"
     },
     {
       "id": 22,
       "generation": 5,
       "name": "Видеокарта",
-      "points": 25
+      "points": 25,
+      "texture": "gpu",
+      "description": "Кому в игры играть, кому нейронки обучать"
     },
     {
       "id": 23,
       "generation": 4,
       "name": "Spark",
-      "points": 17
+      "points": 17,
+      "texture": "spark",
+      "description": "Распределённо обрабатывает неструктурированные и слабоструктурированные данные"
     },
     {
       "id": 24,
       "generation": 6,
       "name": "Компьютер",
-      "points": 35
+      "points": 35,
+      "texture": "computer",
+      "description": "В 1982 года журнал Time назвал \"человеком года\" - компьютер"
     },
     {
       "id": 25,
       "generation": 4,
       "name": "Пиксель",
-      "points": 17
+      "points": 17,
+      "texture": "pixel",
+      "description": "Если он сгорел на экране - прощайтесь со сном и покоем"
     },
     {
       "id": 26,
       "generation": 5,
       "name": "OLAP cube",
-      "points": 25
+      "points": 25,
+      "texture": "olap",
+      "description": "Отображает и суммирует много данных, даёт юзерам доступы"
     },
     {
       "id": 27,
       "generation": 6,
       "name": "Перерыв",
-      "points": 35
+      "points": 35,
+      "texture": "break",
+      "description": "Полистать ленту, посмотреть видео с котиками или просто насладиться кофе - у каждого свой сорт перерыва"
     },
     {
       "id": 28,
       "generation": 6,
       "name": "Deadline",
-      "points": 35
+      "points": 35,
+      "texture": "deadline",
+      "description": "Самый эффективный подход к разработке ПО - DDD: Deadline Driven Development"
     },
     {
       "id": 29,
       "generation": 6,
       "name": "Complexity",
-      "points": 35
+      "points": 35,
+      "texture": "complexity",
+      "description": "measure of the design of the software"
     },
     {
       "id": 30,
       "generation": 4,
       "name": "Datascientist",
-      "points": 17
+      "points": 17,
+      "texture": "datascientist",
+      "description": "Никто так и не понял, чем они занимаются, потому что 100% времени они жонглируют весами в нейронках"
     },
     {
       "id": 31,
       "generation": 4,
       "name": "Map reduce",
-      "points": 17
+      "points": 17,
+      "texture": "map-reduce",
+      "description": "Параллельно вычислит петабайты данных"
     },
     {
       "id": 32,
       "generation": 6,
       "name": "Android",
-      "points": 35
+      "points": 35,
+      "texture": "android",
+      "description": "В новой версии Android из названий убрали названия десертов. Хнык-хнык"
     },
     {
       "id": 33,
       "generation": 6,
       "name": "Кофемашина",
-      "points": 35
+      "points": 35,
+      "texture": ""
     },
     {
       "id": 34,
+      "generation": 6,
+      "name": "Shader",
+      "points": 35
+    },
+    {
+      "id": 35,
       "generation": 6,
       "name": "Биткойн",
       "points": 35
     },
     {
-      "id": 35,
+      "id": 36,
       "generation": 7,
       "name": "Hardware Engineer",
       "points": 47
     },
     {
-      "id": 36,
+      "id": 37,
       "generation": 7,
       "name": "Узел",
       "points": 47
     },
     {
-      "id": 37,
+      "id": 38,
       "generation": 7,
       "name": "Квантовый компьютер",
       "points": 47
     },
     {
-      "id": 38,
+      "id": 39,
       "generation": 7,
       "name": "Datacenter",
       "points": 47
     },
     {
-      "id": 39,
+      "id": 40,
       "generation": 5,
       "name": "Картинка",
       "points": 25
     },
     {
-      "id": 40,
+      "id": 41,
       "generation": 7,
       "name": "Manager",
       "points": 47
     },
     {
-      "id": 41,
+      "id": 42,
       "generation": 7,
       "name": "O(n!)",
       "points": 47
     },
     {
-      "id": 42,
+      "id": 43,
       "generation": 7,
       "name": "Цукерберг",
       "points": 47
     },
     {
-      "id": 43,
+      "id": 44,
       "generation": 7,
       "name": "Satoshi Nakamoto",
       "points": 47
     },
     {
-      "id": 44,
+      "id": 45,
       "generation": 7,
       "name": "Pizza",
       "points": 47
     },
     {
-      "id": 45,
+      "id": 46,
       "generation": 7,
       "name": "Consensus",
       "points": 47
     },
     {
-      "id": 46,
+      "id": 47,
       "generation": 8,
       "name": "Сеть",
       "points": 61
     },
     {
-      "id": 47,
+      "id": 48,
       "generation": 8,
       "name": "Scrum Master",
       "points": 61
     },
     {
-      "id": 48,
+      "id": 49,
       "generation": 8,
       "name": "Кусочек",
       "points": 61
     },
     {
-      "id": 49,
+      "id": 50,
       "generation": 1,
       "name": "Сообщество",
       "points": 5
     },
     {
-      "id": 50,
+      "id": 51,
       "generation": 3,
       "name": "Текст",
       "points": 11
     },
     {
-      "id": 51,
+      "id": 52,
       "generation": 4,
       "name": "Код",
       "points": 17
     },
     {
-      "id": 52,
+      "id": 53,
       "generation": 5,
       "name": "Программист",
       "points": 25
     },
     {
-      "id": 53,
+      "id": 54,
       "generation": 5,
       "name": "CoffeeScript",
       "points": 25
     },
     {
-      "id": 54,
+      "id": 55,
       "generation": 5,
       "name": "Fortran",
       "points": 25
     },
     {
-      "id": 55,
+      "id": 56,
       "generation": 6,
       "name": "Java",
       "points": 35
     },
     {
-      "id": 56,
+      "id": 57,
       "generation": 6,
       "name": "F#",
       "points": 35
     },
     {
-      "id": 57,
+      "id": 58,
       "generation": 6,
       "name": "Программа",
       "points": 35
     },
     {
-      "id": 58,
+      "id": 59,
       "generation": 6,
       "name": "Опыт",
       "points": 35
     },
     {
-      "id": 59,
+      "id": 60,
       "generation": 6,
       "name": "Компьютерные игры",
       "points": 35
     },
     {
-      "id": 60,
+      "id": 61,
       "generation": 7,
       "name": "IT",
       "points": 47
     },
     {
-      "id": 61,
+      "id": 62,
       "generation": 9,
       "name": "Системный администратор",
       "points": 77
     },
     {
-      "id": 62,
+      "id": 63,
       "generation": 8,
       "name": "Cman",
       "points": 61
     },
     {
-      "id": 63,
+      "id": 64,
       "generation": 6,
       "name": "Habr",
       "points": 35
     },
     {
-      "id": 64,
+      "id": 65,
       "generation": 6,
       "name": "Баг",
       "points": 35
     },
     {
-      "id": 65,
+      "id": 66,
       "generation": 5,
       "name": "GitHub",
       "points": 25
     },
     {
-      "id": 66,
+      "id": 67,
       "generation": 8,
       "name": "Data Driven Company",
       "points": 61
     },
     {
-      "id": 67,
+      "id": 68,
       "generation": 8,
       "name": "Додо",
       "points": 61
     },
     {
-      "id": 68,
+      "id": 69,
       "generation": 7,
       "name": "Error",
       "points": 47
     },
     {
-      "id": 69,
+      "id": 70,
       "generation": 7,
       "name": "Middle",
       "points": 47
     },
     {
-      "id": 70,
+      "id": 71,
       "generation": 8,
       "name": "Senior",
       "points": 61
     },
     {
-      "id": 71,
+      "id": 72,
       "generation": 7,
       "name": "Геймер",
       "points": 47
     },
     {
-      "id": 72,
+      "id": 73,
       "generation": 7,
       "name": "Пользователь",
       "points": 47
     },
     {
-      "id": 73,
+      "id": 74,
       "generation": 7,
       "name": "Интерфейс",
       "points": 47
     },
     {
-      "id": 74,
+      "id": 75,
       "generation": 7,
       "name": "Документация",
       "points": 47
     },
     {
-      "id": 75,
+      "id": 76,
       "generation": 6,
       "name": "Open Source",
       "points": 35
     },
     {
-      "id": 76,
+      "id": 77,
       "generation": 9,
       "name": "Интернет",
       "points": 77
     },
     {
-      "id": 77,
+      "id": 78,
       "generation": 5,
       "name": "Assembler",
       "points": 25
     },
     {
-      "id": 78,
+      "id": 79,
       "generation": 5,
       "name": "SQL",
       "points": 25
     },
     {
-      "id": 79,
+      "id": 80,
       "generation": 6,
       "name": "Legacy",
       "points": 35
     },
     {
-      "id": 80,
+      "id": 81,
       "generation": 6,
       "name": "Парное программирование",
       "points": 35
     },
     {
-      "id": 81,
+      "id": 82,
       "generation": 10,
       "name": "Script",
       "points": 95
     },
     {
-      "id": 82,
+      "id": 83,
       "generation": 7,
       "name": "Тестировщик",
       "points": 47
     },
     {
-      "id": 83,
+      "id": 84,
       "generation": 7,
       "name": "Тесты",
       "points": 47
     },
     {
-      "id": 84,
+      "id": 85,
       "generation": 8,
       "name": "QA",
       "points": 61
     },
     {
-      "id": 85,
+      "id": 86,
       "generation": 8,
       "name": "UX",
       "points": 61
     },
     {
-      "id": 86,
+      "id": 87,
       "generation": 7,
       "name": "Компилятор",
       "points": 47
     },
     {
-      "id": 87,
+      "id": 88,
       "generation": 8,
       "name": "C",
       "points": 61
     },
     {
-      "id": 88,
+      "id": 89,
       "generation": 9,
       "name": "C++",
       "points": 77
     },
     {
-      "id": 89,
+      "id": 90,
       "generation": 7,
       "name": "Stallman",
       "points": 47
     },
     {
-      "id": 90,
+      "id": 91,
       "generation": 6,
       "name": "Basic",
       "points": 35
     },
     {
-      "id": 91,
+      "id": 92,
       "generation": 7,
       "name": "MS-DOS",
       "points": 47
     },
     {
-      "id": 92,
+      "id": 93,
       "generation": 8,
       "name": "Windows",
       "points": 61
     },
     {
-      "id": 93,
+      "id": 94,
       "generation": 9,
       "name": "Bill Gates",
       "points": 77
     },
     {
-      "id": 94,
+      "id": 95,
       "generation": 10,
       "name": "Microsoft",
       "points": 95
     },
     {
-      "id": 95,
+      "id": 96,
       "generation": 9,
       "name": "Linux",
       "points": 77
     },
     {
-      "id": 96,
+      "id": 97,
       "generation": 10,
       "name": "Линус Торвальдс",
       "points": 95
     },
     {
-      "id": 97,
+      "id": 98,
       "generation": 9,
       "name": "Экран",
       "points": 77
     },
     {
-      "id": 98,
+      "id": 99,
       "generation": 10,
       "name": "Facebook",
       "points": 95
     },
     {
-      "id": 99,
+      "id": 100,
       "generation": 11,
       "name": "Visual Studio",
       "points": 115
     },
     {
-      "id": 100,
+      "id": 101,
       "generation": 11,
       "name": ".NET",
       "points": 115
     },
     {
-      "id": 101,
+      "id": 102,
       "generation": 10,
       "name": "Облака",
       "points": 95
     },
     {
-      "id": 102,
+      "id": 103,
       "generation": 11,
       "name": "Azure",
       "points": 115
     },
     {
-      "id": 103,
+      "id": 104,
       "generation": 11,
       "name": "Docker",
       "points": 115
     },
     {
-      "id": 104,
+      "id": 105,
       "generation": 12,
       "name": "Kubernetes",
       "points": 137
     },
     {
-      "id": 105,
+      "id": 106,
       "generation": 13,
       "name": "SRE",
       "points": 161
     },
     {
-      "id": 106,
+      "id": 107,
       "generation": 12,
       "name": "C#",
       "points": 137
     },
     {
-      "id": 107,
+      "id": 108,
       "generation": 13,
       "name": "Рихтер",
       "points": 161
     },
     {
-      "id": 108,
+      "id": 109,
       "generation": 13,
       "name": "Holywar",
       "points": 161
     },
     {
-      "id": 109,
+      "id": 110,
       "generation": 10,
       "name": "HTML",
       "points": 95
     },
     {
-      "id": 110,
+      "id": 111,
       "generation": 10,
       "name": "JavaScript",
       "points": 95
     },
     {
-      "id": 111,
+      "id": 112,
       "generation": 10,
       "name": "Сайт",
       "points": 95
     },
     {
-      "id": 112,
+      "id": 113,
       "generation": 11,
       "name": "dodopizza.ru",
       "points": 115
     },
     {
-      "id": 113,
+      "id": 114,
       "generation": 13,
       "name": "Backend",
       "points": 161
     },
     {
-      "id": 114,
+      "id": 115,
       "generation": 11,
       "name": "Frontend",
       "points": 115
+    },
+    {
+      "id": 116,
+      "generation": 8,
+      "name": "Тикет",
+      "points": 61
+    },
+    {
+      "id": 117,
+      "generation": 6,
+      "name": "Реляционная БД",
+      "points": 35
+    },
+    {
+      "id": 118,
+      "generation": 8,
+      "name": "Autotests",
+      "points": 61
+    },
+    {
+      "id": 119,
+      "generation": 9,
+      "name": "Синий экран",
+      "points": 77
+    },
+    {
+      "id": 120,
+      "generation": 11,
+      "name": ".Net Core",
+      "points": 115
+    },
+    {
+      "id": 121,
+      "generation": 12,
+      "name": "DotNext",
+      "points": 137
     }
   ],
   "blueprints": [
@@ -840,433 +940,468 @@
     },
     {
       "firstId": 22,
-      "secondId": 22,
+      "secondId": 9,
       "resultId": 34
+    },
+    {
+      "firstId": 22,
+      "secondId": 22,
+      "resultId": 35
     },
     {
       "firstId": 1,
       "secondId": 24,
-      "resultId": 35
-    },
-    {
-      "firstId": 24,
-      "secondId": 4,
       "resultId": 36
     },
     {
       "firstId": 24,
-      "secondId": 10,
+      "secondId": 4,
       "resultId": 37
     },
     {
       "firstId": 24,
-      "secondId": 24,
+      "secondId": 10,
       "resultId": 38
+    },
+    {
+      "firstId": 24,
+      "secondId": 24,
+      "resultId": 39
     },
     {
       "firstId": 25,
       "secondId": 25,
-      "resultId": 39
+      "resultId": 40
     },
     {
       "firstId": 1,
       "secondId": 28,
-      "resultId": 40
+      "resultId": 41
     },
     {
       "firstId": 29,
       "secondId": 6,
-      "resultId": 41
+      "resultId": 42
     },
     {
       "firstId": 32,
       "secondId": 1,
-      "resultId": 42
-    },
-    {
-      "firstId": 34,
-      "secondId": 1,
       "resultId": 43
     },
     {
-      "firstId": 34,
-      "secondId": 4,
+      "firstId": 35,
+      "secondId": 1,
       "resultId": 44
     },
     {
-      "firstId": 34,
-      "secondId": 9,
+      "firstId": 35,
+      "secondId": 4,
       "resultId": 45
     },
     {
-      "firstId": 36,
-      "secondId": 36,
+      "firstId": 35,
+      "secondId": 9,
       "resultId": 46
     },
     {
-      "firstId": 40,
-      "secondId": 2,
+      "firstId": 37,
+      "secondId": 37,
       "resultId": 47
     },
     {
-      "firstId": 44,
-      "secondId": 8,
+      "firstId": 41,
+      "secondId": 2,
       "resultId": 48
+    },
+    {
+      "firstId": 45,
+      "secondId": 8,
+      "resultId": 49
     },
     {
       "firstId": 1,
       "secondId": 1,
-      "resultId": 49
-    },
-    {
-      "firstId": 49,
-      "secondId": 13,
       "resultId": 50
     },
     {
       "firstId": 50,
-      "secondId": 9,
+      "secondId": 13,
       "resultId": 51
     },
     {
       "firstId": 51,
-      "secondId": 1,
+      "secondId": 9,
       "resultId": 52
     },
     {
-      "firstId": 51,
-      "secondId": 2,
+      "firstId": 52,
+      "secondId": 1,
       "resultId": 53
     },
     {
-      "firstId": 51,
-      "secondId": 7,
+      "firstId": 52,
+      "secondId": 2,
       "resultId": 54
     },
     {
       "firstId": 52,
-      "secondId": 2,
+      "secondId": 7,
       "resultId": 55
     },
     {
-      "firstId": 52,
-      "secondId": 7,
+      "firstId": 53,
+      "secondId": 2,
       "resultId": 56
     },
     {
-      "firstId": 52,
-      "secondId": 9,
+      "firstId": 53,
+      "secondId": 7,
       "resultId": 57
     },
     {
-      "firstId": 52,
-      "secondId": 18,
+      "firstId": 53,
+      "secondId": 9,
       "resultId": 58
     },
     {
-      "firstId": 52,
-      "secondId": 22,
+      "firstId": 53,
+      "secondId": 18,
       "resultId": 59
     },
     {
-      "firstId": 52,
-      "secondId": 14,
-      "resultId": 35
-    },
-    {
-      "firstId": 52,
-      "secondId": 24,
+      "firstId": 53,
+      "secondId": 22,
       "resultId": 60
     },
     {
-      "firstId": 52,
-      "secondId": 46,
+      "firstId": 53,
+      "secondId": 14,
+      "resultId": 36
+    },
+    {
+      "firstId": 53,
+      "secondId": 24,
       "resultId": 61
     },
     {
-      "firstId": 44,
-      "secondId": 52,
+      "firstId": 53,
+      "secondId": 47,
       "resultId": 62
     },
     {
-      "firstId": 52,
-      "secondId": 50,
+      "firstId": 45,
+      "secondId": 53,
       "resultId": 63
     },
     {
-      "firstId": 52,
+      "firstId": 53,
       "secondId": 51,
       "resultId": 64
     },
     {
-      "firstId": 49,
-      "secondId": 51,
+      "firstId": 53,
+      "secondId": 52,
       "resultId": 65
     },
     {
-      "firstId": 60,
-      "secondId": 19,
+      "firstId": 50,
+      "secondId": 52,
       "resultId": 66
     },
     {
-      "firstId": 60,
-      "secondId": 44,
+      "firstId": 61,
+      "secondId": 19,
       "resultId": 67
     },
     {
-      "firstId": 64,
-      "secondId": 57,
+      "firstId": 61,
+      "secondId": 45,
       "resultId": 68
     },
     {
-      "firstId": 52,
+      "firstId": 65,
       "secondId": 58,
       "resultId": 69
     },
     {
-      "firstId": 69,
-      "secondId": 58,
+      "firstId": 53,
+      "secondId": 59,
       "resultId": 70
     },
     {
-      "firstId": 59,
-      "secondId": 1,
+      "firstId": 70,
+      "secondId": 59,
       "resultId": 71
     },
     {
-      "firstId": 57,
+      "firstId": 60,
       "secondId": 1,
       "resultId": 72
     },
     {
-      "firstId": 57,
-      "secondId": 39,
+      "firstId": 58,
+      "secondId": 1,
       "resultId": 73
     },
     {
-      "firstId": 57,
-      "secondId": 50,
+      "firstId": 58,
+      "secondId": 40,
       "resultId": 74
     },
     {
-      "firstId": 65,
-      "secondId": 52,
+      "firstId": 58,
+      "secondId": 51,
       "resultId": 75
     },
     {
-      "firstId": 46,
-      "secondId": 24,
+      "firstId": 66,
+      "secondId": 53,
       "resultId": 76
     },
     {
-      "firstId": 51,
-      "secondId": 14,
+      "firstId": 47,
+      "secondId": 24,
       "resultId": 77
     },
     {
-      "firstId": 51,
-      "secondId": 13,
+      "firstId": 52,
+      "secondId": 14,
       "resultId": 78
     },
     {
-      "firstId": 51,
-      "secondId": 18,
+      "firstId": 52,
+      "secondId": 13,
       "resultId": 79
     },
     {
       "firstId": 52,
-      "secondId": 52,
+      "secondId": 18,
       "resultId": 80
     },
     {
-      "firstId": 61,
-      "secondId": 51,
+      "firstId": 53,
+      "secondId": 53,
       "resultId": 81
     },
     {
-      "firstId": 64,
-      "secondId": 1,
+      "firstId": 62,
+      "secondId": 52,
       "resultId": 82
     },
     {
-      "firstId": 64,
-      "secondId": 51,
+      "firstId": 65,
+      "secondId": 1,
       "resultId": 83
     },
     {
-      "firstId": 82,
-      "secondId": 82,
+      "firstId": 65,
+      "secondId": 52,
       "resultId": 84
     },
     {
-      "firstId": 73,
-      "secondId": 72,
+      "firstId": 83,
+      "secondId": 83,
       "resultId": 85
     },
     {
-      "firstId": 77,
-      "secondId": 57,
+      "firstId": 74,
+      "secondId": 73,
       "resultId": 86
     },
     {
-      "firstId": 86,
-      "secondId": 77,
+      "firstId": 78,
+      "secondId": 58,
       "resultId": 87
     },
     {
       "firstId": 87,
-      "secondId": 87,
+      "secondId": 78,
       "resultId": 88
     },
     {
-      "firstId": 52,
-      "secondId": 75,
+      "firstId": 88,
+      "secondId": 88,
       "resultId": 89
     },
     {
-      "firstId": 77,
-      "secondId": 1,
+      "firstId": 53,
+      "secondId": 76,
       "resultId": 90
     },
     {
-      "firstId": 77,
-      "secondId": 29,
-      "resultId": 87
-    },
-    {
-      "firstId": 90,
-      "secondId": 24,
+      "firstId": 78,
+      "secondId": 1,
       "resultId": 91
     },
     {
+      "firstId": 78,
+      "secondId": 29,
+      "resultId": 88
+    },
+    {
       "firstId": 91,
-      "secondId": 73,
+      "secondId": 24,
       "resultId": 92
     },
     {
       "firstId": 92,
-      "secondId": 1,
+      "secondId": 74,
       "resultId": 93
     },
     {
       "firstId": 93,
-      "secondId": 92,
+      "secondId": 1,
       "resultId": 94
     },
     {
-      "firstId": 92,
-      "secondId": 75,
+      "firstId": 94,
+      "secondId": 93,
       "resultId": 95
     },
     {
-      "firstId": 95,
-      "secondId": 52,
+      "firstId": 93,
+      "secondId": 76,
       "resultId": 96
     },
     {
-      "firstId": 92,
-      "secondId": 24,
+      "firstId": 96,
+      "secondId": 53,
       "resultId": 97
     },
     {
-      "firstId": 97,
+      "firstId": 93,
+      "secondId": 24,
+      "resultId": 98
+    },
+    {
+      "firstId": 98,
       "secondId": 8,
       "resultId": 25
     },
     {
-      "firstId": 42,
-      "secondId": 76,
-      "resultId": 98
-    },
-    {
-      "firstId": 88,
-      "secondId": 94,
+      "firstId": 43,
+      "secondId": 77,
       "resultId": 99
     },
     {
-      "firstId": 94,
-      "secondId": 55,
+      "firstId": 89,
+      "secondId": 95,
       "resultId": 100
     },
     {
-      "firstId": 76,
-      "secondId": 1,
-      "resultId": 72
-    },
-    {
-      "firstId": 76,
-      "secondId": 38,
+      "firstId": 95,
+      "secondId": 56,
       "resultId": 101
     },
     {
-      "firstId": 101,
-      "secondId": 94,
+      "firstId": 77,
+      "secondId": 1,
+      "resultId": 73
+    },
+    {
+      "firstId": 77,
+      "secondId": 39,
       "resultId": 102
     },
     {
-      "firstId": 101,
+      "firstId": 102,
       "secondId": 95,
       "resultId": 103
     },
     {
-      "firstId": 103,
-      "secondId": 101,
+      "firstId": 102,
+      "secondId": 96,
       "resultId": 104
     },
     {
       "firstId": 104,
-      "secondId": 52,
+      "secondId": 102,
       "resultId": 105
     },
     {
-      "firstId": 103,
-      "secondId": 103,
-      "resultId": 104
-    },
-    {
-      "firstId": 100,
-      "secondId": 51,
+      "firstId": 105,
+      "secondId": 53,
       "resultId": 106
     },
     {
-      "firstId": 106,
+      "firstId": 104,
+      "secondId": 104,
+      "resultId": 105
+    },
+    {
+      "firstId": 101,
       "secondId": 52,
       "resultId": 107
     },
     {
-      "firstId": 106,
-      "secondId": 55,
+      "firstId": 107,
+      "secondId": 53,
       "resultId": 108
     },
     {
-      "firstId": 50,
-      "secondId": 76,
+      "firstId": 107,
+      "secondId": 56,
       "resultId": 109
     },
     {
-      "firstId": 76,
-      "secondId": 51,
+      "firstId": 51,
+      "secondId": 77,
       "resultId": 110
     },
     {
-      "firstId": 76,
-      "secondId": 57,
+      "firstId": 77,
+      "secondId": 52,
       "resultId": 111
     },
     {
-      "firstId": 111,
-      "secondId": 67,
+      "firstId": 77,
+      "secondId": 58,
       "resultId": 112
     },
     {
-      "firstId": 111,
-      "secondId": 106,
+      "firstId": 112,
+      "secondId": 68,
       "resultId": 113
     },
     {
-      "firstId": 110,
-      "secondId": 52,
+      "firstId": 112,
+      "secondId": 107,
       "resultId": 114
+    },
+    {
+      "firstId": 111,
+      "secondId": 53,
+      "resultId": 115
+    },
+    {
+      "firstId": 73,
+      "secondId": 65,
+      "resultId": 116
+    },
+    {
+      "firstId": 79,
+      "secondId": 13,
+      "resultId": 117
+    },
+    {
+      "firstId": 84,
+      "secondId": 58,
+      "resultId": 118
+    },
+    {
+      "firstId": 93,
+      "secondId": 65,
+      "resultId": 119
+    },
+    {
+      "firstId": 95,
+      "secondId": 76,
+      "resultId": 120
+    },
+    {
+      "firstId": 101,
+      "secondId": 50,
+      "resultId": 121
     }
   ]
 }

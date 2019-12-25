@@ -1,8 +1,11 @@
 import * as Phaser from "phaser";
 import {Blueprint, Db, Helper, Item} from "@it/shared";
 import {IngredientGameObject, TweenIngredientGameObject} from "@it/game-objects";
+import {DescriptionScene} from "@it/scenes/description.scene";
 
 export class GameScene extends Phaser.Scene {
+
+    private _counter: number = 0;
 
     private _opened: number[] = [];
 
@@ -11,7 +14,7 @@ export class GameScene extends Phaser.Scene {
     private _secondId: number;
     private _second: TweenIngredientGameObject;
 
-    private _mergeStarted: boolean = false;
+    private _merge: boolean = false;
     private _clearStarted: boolean = false;
 
     private _db: Db = null;
@@ -73,13 +76,15 @@ export class GameScene extends Phaser.Scene {
 
     update() {
 
-        if (!this._mergeStarted && this._firstId && this._secondId) {
+        if (!this._merge && this._firstId && this._secondId) {
 
             const blueprint = this._getBlueprint();
 
             if (blueprint) {
 
-                this._mergeStarted = true;
+                this._merge = true;
+
+                //this._ingredients.forEach(x => x.input.enabled = false);
 
                 this.tweens.add({
                     targets: [this._first, this._second],
@@ -89,15 +94,32 @@ export class GameScene extends Phaser.Scene {
                     duration: 500,
                     onComplete: () => {
                         this._firstId = null;
+                        this._first.destroy();
                         this._first = null;
                         this._secondId = null;
+                        this._second.destroy();
                         this._second = null;
 
                         const result = this._db.items.find(x => x.id === blueprint.resultId);
 
                         (<any>this.add).tweenIngredient(300, 175, result.texture);
 
-                        this._mergeStarted = false;
+                        this._merge = false;
+
+
+                        const handle = "description" + this._counter++;
+
+                        var win = this.add.zone(0, 0, window.innerWidth, window.innerHeight);
+
+                        const scene = new DescriptionScene(handle);
+
+                        //this.children.add(scene);
+
+                        this.scene.add(handle, DescriptionScene, true);
+
+                        this.scene.launch(handle, result);
+
+                        //this._ingredients.forEach(x => x.input.enabled = true);
                     }
                 });
             }
@@ -184,7 +206,15 @@ export class GameScene extends Phaser.Scene {
     }
 
     private _getBlueprint(): Blueprint {
-        return this._db.blueprints
+
+        const front = this._db.blueprints
             .find(x => x.firstId == this._firstId && x.secondId === this._secondId);
+
+        if (front != null) {
+            return front;
+        }
+
+        return this._db.blueprints
+            .find(x => x.firstId == this._secondId && x.secondId === this._firstId);
     }
 }

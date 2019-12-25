@@ -61,19 +61,27 @@ function parseRow(row) {
     }
 
     if (row.startsWith("-")) {
-        debugger;
+        const splits = row.split(";");
+
+        let descr = splits[2];
+
+        descr = descr.endsWith(".") ? descr : descr + ".";
 
         const obj = {
             id: id++,
             generation: 0,
-            name: row.replace("-", ""),
-            points: 0
+            name: splits[0].replace("-", ""),
+            points: 0,
+            texture: splits[1],
+            description: descr
         };
 
         return [obj, null];
     }
 
-    const splits = row.split("=");
+    const data = row.split(";");
+
+    const splits = data[0].split("=");
 
     const ingredients = splits[0].split(" + ");
     const result = splits[1].trim();
@@ -96,7 +104,9 @@ function parseRow(row) {
             id: id++,
             generation: gen,
             name: result,
-            points: getPoints(gen)
+            points: getPoints(gen),
+            texture: data[1],
+            description: data[2]
         };
 
         resultArr.push(resultItem);
