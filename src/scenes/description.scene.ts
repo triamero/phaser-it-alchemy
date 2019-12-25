@@ -5,15 +5,52 @@ export class DescriptionScene extends Phaser.Scene {
 
     private item: Item;
 
-    constructor(handle: string) {
+    constructor(handle: string, parent: any) {
         super(handle);
+
+        (<any>this).parent = parent;
     }
 
     init(item: Item) {
         this.item = item;
+
+        console.log("item: ", item);
     }
 
     create() {
-        const backdrop = this.add.rectangle(0, 0, window.innerWidth, window.innerHeight, 0x000000, 0.3);
+
+        const parent = (<any>this).parent;
+
+        //this.cameras.main.setViewport(parent.x, parent.y, 600, 800);
+
+        const backdrop = this.add.rectangle(parent.x, parent.y, 1200, 2200, 0x000000, 0.3);
+
+        const container = this.add.container(300, 400);
+
+
+        container.add(this.add.rectangle(0, 0, 340, 600, 0x123123, 1));
+
+        container.add(this.add.image(0, -225, this.item.texture));
+
+        const text = this.add.text(
+            -120,
+            -160,
+            this.item.name,
+            {
+                align: "center",
+                wordWrap: {width: 280, useAdvancedWrap: true}
+            });
+        //(<any>text).setTextBounds(-150, -160, 150, -140);
+
+        container.add(text);
+
+        container.add(this.add.text(
+            -150,
+            -140,
+            this.item.description,
+            {
+                align: "center",
+                wordWrap: {width: 300, useAdvancedWrap: true}
+            }));
     }
 }

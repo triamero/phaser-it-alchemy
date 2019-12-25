@@ -109,17 +109,11 @@ export class GameScene extends Phaser.Scene {
 
                         const handle = "description" + this._counter++;
 
-                        var win = this.add.zone(0, 0, window.innerWidth, window.innerHeight);
+                        var win = this.add.zone(0, 0, 600, 800);
 
-                        const scene = new DescriptionScene(handle);
+                        const scene = new DescriptionScene(handle, win);
 
-                        //this.children.add(scene);
-
-                        this.scene.add(handle, DescriptionScene, true);
-
-                        this.scene.launch(handle, result);
-
-                        //this._ingredients.forEach(x => x.input.enabled = true);
+                        this.scene.add(handle, scene, true, result);
                     }
                 });
             }
