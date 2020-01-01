@@ -67,7 +67,7 @@ export class GameScene extends Phaser.Scene {
                 ingredient.setSize(90, 90);
                 ingredient.setInteractive();
 
-                ingredient.on("pointerup", this.onClickIngredient);
+                ingredient.on("pointerdown", this.onClickIngredient);
 
                 return ingredient;
             });
@@ -102,7 +102,16 @@ export class GameScene extends Phaser.Scene {
 
                         const result = this._db.items.find(x => x.id === blueprint.resultId);
 
-                        (<any>this.add).tweenIngredient(300, 175, result.texture);
+                        const tw = (<any>this.add).tweenIngredient(300, 175, result.texture);
+
+                        this.tweens.add({
+                            targets: [tw],
+                            ease: "easeIn",
+                            duration: 500,
+                            onComplete: () => {
+                                tw.destroy();
+                            }
+                        });
 
                         this._merge = false;
 
@@ -114,6 +123,18 @@ export class GameScene extends Phaser.Scene {
                         const scene = new DescriptionScene(handle, win);
 
                         this.scene.add(handle, scene, true, result);
+
+                        const opnd: number[] = this.cache.obj.get("openedIds");
+
+                        opnd.push(result.id);
+
+                        console.log(opnd);
+
+                        const s = JSON.stringify(opnd);
+
+                        console.log(s);
+
+                        localStorage.setItem("openedIds", s);
                     }
                 });
             }
@@ -193,10 +214,10 @@ export class GameScene extends Phaser.Scene {
 
     private getNextPlace(index: number): number[] {
 
-        const horizontalPosition = index % 6;
-        const verticalPosition = Math.floor(index / 6);
+        const horizontalPosition = index % 4;
+        const verticalPosition = Math.floor(index / 4);
 
-        return [90 + 40 + horizontalPosition * (25 + 80), 290 + verticalPosition * 30]
+        return [90 + 40 + horizontalPosition * (25 + 80), 290 + verticalPosition * 90]
     }
 
     private _getBlueprint(): Blueprint {

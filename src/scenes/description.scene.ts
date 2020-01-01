@@ -4,9 +4,12 @@ import {Item} from "@it/shared";
 export class DescriptionScene extends Phaser.Scene {
 
     private item: Item;
+    private _handle: string;
 
     constructor(handle: string, parent: any) {
         super(handle);
+
+        this._handle = handle;
 
         (<any>this).parent = parent;
     }
@@ -26,6 +29,10 @@ export class DescriptionScene extends Phaser.Scene {
         const backdrop = this.add.rectangle(parent.x, parent.y, 1200, 2200, 0x000000, 0.3);
 
         const container = this.add.container(300, 400);
+
+        //container.add();
+
+
 
 
         container.add(this.add.rectangle(0, 0, 340, 600, 0x123123, 1));
@@ -52,5 +59,16 @@ export class DescriptionScene extends Phaser.Scene {
                 align: "center",
                 wordWrap: {width: 300, useAdvancedWrap: true}
             }));
+
+        const btn = this.add.rectangle(100, 100, 20, 20, 0x000000);
+
+        btn.on("pointerdown", this.onClose, this);
+        btn.setInteractive();
+
+        container.add(btn);
+    }
+
+    onClose() {
+        this.scene.stop(this._handle);
     }
 }
