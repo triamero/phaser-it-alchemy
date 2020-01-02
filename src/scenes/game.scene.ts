@@ -5,6 +5,8 @@ import {DescriptionScene} from "@it/scenes/description.scene";
 
 export class GameScene extends Phaser.Scene {
 
+    private _scroll: any;
+
     private _moving: boolean = false;
 
     private _counter: number = 0;
@@ -67,7 +69,7 @@ export class GameScene extends Phaser.Scene {
 
         this._recalculatePoints();
 
-        me.rexUI.add
+        this._scroll = me.rexUI.add
             .scrollablePanel({
                 x: 300,
                 y: 500,
@@ -100,6 +102,8 @@ export class GameScene extends Phaser.Scene {
                 }
             })
             .layout();
+
+        this.input.on("wheel", this.onMouseWheel, this);
     }
 
 
@@ -325,4 +329,17 @@ export class GameScene extends Phaser.Scene {
 
     }
 
+    onMouseWheel(pointer: any, event: any[], x: number, y: number): void {
+
+        let oy = this._scroll.childOY - y / 2;
+
+        if (oy > 0) {
+            oy = 0;
+        }
+
+        if (oy < -1 * this._scroll.height + 150) {
+            oy = this._scroll.childOY;
+        }
+        this._scroll.childOY = oy;
+    }
 }
