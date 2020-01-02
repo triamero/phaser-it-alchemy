@@ -11,8 +11,6 @@ export class GameScene extends Phaser.Scene {
 
     private _counter: number = 0;
 
-    private _opened: number[] = [];
-
     private _firstId: number;
     private _first: TweenIngredientGameObject;
     private _secondId: number;
@@ -28,15 +26,13 @@ export class GameScene extends Phaser.Scene {
 
     private _ingredients: IngredientGameObject[] = [];
 
-    init() {
+    protected init() {
         this._db = this.cache.json.get("db");
     }
 
-    preload() {
+    protected preload() {
 
         const hud = this.scene.launch("hud");
-
-        this._opened = this.cache.obj.get("opened");
 
         this.load.tilemapTiledJSON("game", "assets/alchemy.json");
         this.load.image("game-tilemap", "assets/tilebag.png");
@@ -318,7 +314,7 @@ export class GameScene extends Phaser.Scene {
 
         label
             .getElement("icon")
-            .setSize(80, 80)
+            .setSize(80, 85)
             .setInteractive()
             .on("pointerdown", this.onClickIngredient);
 
