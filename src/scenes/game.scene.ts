@@ -60,17 +60,7 @@ export class GameScene extends Phaser.Scene {
 
         this._ingredients = opened
             .map(x => this._db.items.find(i => i.id === x))
-            .map((x: Item, index: number) => {
-                const place = this.getNextPlace(index);
-
-                const ingredient: IngredientGameObject = me.add.ingredient(place[0], place[1], x.texture, x.name, x.id);
-                ingredient.setSize(90, 90);
-                ingredient.setInteractive();
-
-                ingredient.on("pointerdown", this.onClickIngredient);
-
-                return ingredient;
-            });
+            .map((x: Item, index: number) => this.createIngredient(x, index));
     }
 
 
@@ -115,18 +105,17 @@ export class GameScene extends Phaser.Scene {
 
                         this._merge = false;
 
-
-                        const handle = "description" + this._counter++;
-
-                        var win = this.add.zone(0, 0, 600, 800);
-
-                        const scene = new DescriptionScene(handle, win);
-
-                        this.scene.add(handle, scene, true, result);
-
                         const opnd: number[] = this.cache.obj.get("openedIds");
 
                         if (!opnd.some(x => x === result.id)) {
+
+                            const handle = "description" + this._counter++;
+
+                            var win = this.add.zone(0, 0, 600, 800);
+
+                            const scene = new DescriptionScene(handle, win);
+
+                            this.scene.add(handle, scene, true, result);
                             opnd.push(result.id);
 
                             console.log(opnd);
@@ -136,6 +125,8 @@ export class GameScene extends Phaser.Scene {
                             console.log(s);
 
                             localStorage.setItem("openedIds", s);
+
+                            this.createIngredient(result, opnd.length - 1);
                         }
                     }
                 });
@@ -222,6 +213,21 @@ export class GameScene extends Phaser.Scene {
         return [90 + 40 + horizontalPosition * (25 + 80), 290 + verticalPosition * 90]
     }
 
+    private createIngredient(item: Item, index: number) {
+
+        var me: any = this;
+
+        const place = this.getNextPlace(index);
+
+        const ingredient: IngredientGameObject = me.add.ingredient(place[0], place[1], item.texture, item.name, item.id);
+        ingredient.setSize(90, 90);
+        ingredient.setInteractive();
+
+        ingredient.on("pointerdown", this.onClickIngredient);
+
+        return ingredient;
+    }
+
     private _getBlueprint(): Blueprint {
 
         const front = this._db.blueprints
@@ -234,4 +240,5 @@ export class GameScene extends Phaser.Scene {
         return this._db.blueprints
             .find(x => x.firstId == this._secondId && x.secondId === this._firstId);
     }
+
 }
