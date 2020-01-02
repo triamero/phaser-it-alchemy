@@ -56,13 +56,6 @@ export class BootScene extends Phaser.Scene {
         const db: Db = this.cache.json.get("db");
 
         const openedIds: number[] = this.cache.obj.get("openedIds");
-
-        const points = openedIds
-            .map(x => db.items.find(z => z.id === x))
-            .map(x => x.points)
-            .reduce((prev, curr) => prev + curr);
-
-        this.cache.obj.add("points", points);
         this.cache.obj.add("opened", [openedIds.length, db.items.length]);
 
         this.scene.start("game");

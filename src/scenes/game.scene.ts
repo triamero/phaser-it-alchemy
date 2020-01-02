@@ -5,6 +5,8 @@ import {DescriptionScene} from "@it/scenes/description.scene";
 
 export class GameScene extends Phaser.Scene {
 
+    private _moving: boolean = false;
+
     private _counter: number = 0;
 
     private _opened: number[] = [];
@@ -61,6 +63,8 @@ export class GameScene extends Phaser.Scene {
         this._ingredients = opened
             .map(x => this._db.items.find(i => i.id === x))
             .map((x: Item, index: number) => this.createIngredient(x, index));
+
+        this._recalculatePoints();
     }
 
 
@@ -96,7 +100,8 @@ export class GameScene extends Phaser.Scene {
 
                         this.tweens.add({
                             targets: [tw],
-                            ease: "easeIn",
+                            alpha: {from: 1, to: 0},
+                            ease: "linear",
                             duration: 500,
                             onComplete: () => {
                                 tw.destroy();
@@ -127,6 +132,8 @@ export class GameScene extends Phaser.Scene {
                             localStorage.setItem("openedIds", s);
 
                             this.createIngredient(result, opnd.length - 1);
+
+                            this._recalculatePoints();
                         }
                     }
                 });
@@ -161,6 +168,12 @@ export class GameScene extends Phaser.Scene {
 
         const scene = <any>this.scene;
 
+        if (scene._moving) {
+            return;
+        }
+
+        scene._moving = true;
+
         const me = <IngredientGameObject><any>this;
 
         const myClone = scene.add.tweenIngredient(me.x, me.y, me.texture);
@@ -183,7 +196,8 @@ export class GameScene extends Phaser.Scene {
             y: y,
             ease: "Power2",
             onComplete: (tween: Phaser.Tweens.Tween) => {
-                console.log("tween completed");
+
+                scene._moving = false;
 
                 if (!scene._firstId) {
                     scene._firstId = me.id;
@@ -239,6 +253,17 @@ export class GameScene extends Phaser.Scene {
 
         return this._db.blueprints
             .find(x => x.firstId == this._secondId && x.secondId === this._firstId);
+    }
+
+    private _recalculatePoints() {
+        const openedIds: number[] = this.cache.obj.get("openedIds");
+
+        const points = openedIds
+            .map(x => this._db.items.find(z => z.id === x))
+            .map(x => x.points)
+            .reduce((prev, curr) => prev + curr);
+
+        this.cache.obj.add("points", points);
     }
 
 }
