@@ -11,13 +11,10 @@ export class BootScene extends Phaser.Scene {
             value = "[]";
         }
 
-        const opened: number[] = JSON.parse(value);
+        let opened: number[] = JSON.parse(value);
 
-        if (opened.length === 0) {
-            opened.push(1);
-            opened.push(2);
-            opened.push(3);
-            opened.push(4);
+        if (opened.length < 4) {
+            opened = [1, 2, 3, 4];
         }
 
         this.cache.obj.add("openedIds", opened);

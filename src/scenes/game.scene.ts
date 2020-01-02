@@ -118,10 +118,10 @@ export class GameScene extends Phaser.Scene {
                     duration: 500,
                     onComplete: () => {
                         this._firstId = null;
-                        this._first.destroy();
+                        this._first?.destroy();
                         this._first = null;
                         this._secondId = null;
-                        this._second.destroy();
+                        this._second?.destroy();
                         this._second = null;
 
                         const result = this._db.items.find(x => x.id === blueprint.resultId);
@@ -328,8 +328,14 @@ export class GameScene extends Phaser.Scene {
         const column = index % 4;
         const row = Math.floor(index / 4);
 
-        this._gridSizer.add(icon, column, row, "top", 2, true);
+        if (row >= this._gridSizer.rowCount) {
+            this._gridSizer.rowCount += 1;
+        }
+
+        this._gridSizer.add(icon, column, row);
         this._gridSizer.layout();
+        this._sizer.layout();
+        this._scroll.layout();
     }
 
     onMouseWheel(pointer: any, event: any[], x: number, y: number): void {
@@ -340,7 +346,7 @@ export class GameScene extends Phaser.Scene {
             oy = 0;
         }
 
-        oy = Math.max(oy, -1 * this._scroll.height + 140);
+        oy = Math.max(oy, -1 * this._scroll.displayHeight);
 
         this._scroll.childOY = oy;
     }
