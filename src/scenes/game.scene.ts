@@ -16,13 +16,10 @@ export class GameScene extends Phaser.Scene {
     private _secondId: number;
     private _second: TweenIngredientGameObject;
 
-    private _merge: boolean = false;
-    private _clearStarted: boolean = false;
+    private _merging: boolean = false;
+    private _clearing: boolean = false;
 
     private _db: Db = null;
-
-    private _firstContainer: Phaser.GameObjects.Container = null;
-    private _secondContainer: Phaser.GameObjects.Container = null;
 
     private _ingredients: IngredientGameObject[] = [];
 
@@ -105,13 +102,13 @@ export class GameScene extends Phaser.Scene {
 
     update() {
 
-        if (!this._merge && this._firstId && this._secondId) {
+        if (!this._merging && this._firstId && this._secondId) {
 
             const blueprint = this._getBlueprint();
 
             if (blueprint) {
 
-                this._merge = true;
+                this._merging = true;
 
                 this.tweens.add({
                     targets: [this._first, this._second],
@@ -141,7 +138,7 @@ export class GameScene extends Phaser.Scene {
                             }
                         });
 
-                        this._merge = false;
+                        this._merging = false;
 
                         const opnd: number[] = this.cache.obj.get("openedIds");
 
@@ -169,12 +166,12 @@ export class GameScene extends Phaser.Scene {
             }
         }
 
-        if (!this._clearStarted && this._firstId && this._secondId) {
+        if (!this._clearing && this._firstId && this._secondId) {
             const blueprint = this._getBlueprint();
 
             if (!blueprint) {
 
-                this._clearStarted = true;
+                this._clearing = true;
 
                 this.tweens.add({
                     targets: [this._second],
@@ -186,7 +183,7 @@ export class GameScene extends Phaser.Scene {
                         this._second.destroy();
                         this._second = null;
 
-                        this._clearStarted = false;
+                        this._clearing = false;
                     }
                 });
             }
@@ -333,9 +330,8 @@ export class GameScene extends Phaser.Scene {
             oy = 0;
         }
 
-        if (oy < -1 * this._scroll.height + 150) {
-            oy = this._scroll.childOY;
-        }
+        oy = Math.max(oy, -1 * this._scroll.height + 140);
+
         this._scroll.childOY = oy;
     }
 }
