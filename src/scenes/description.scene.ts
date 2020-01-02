@@ -16,24 +16,15 @@ export class DescriptionScene extends Phaser.Scene {
 
     init(item: Item) {
         this.item = item;
-
-        console.log("item: ", item);
     }
 
     create() {
 
         const parent = (<any>this).parent;
 
-        //this.cameras.main.setViewport(parent.x, parent.y, 600, 800);
-
         const backdrop = this.add.rectangle(parent.x, parent.y, 1200, 2200, 0x000000, 0.3);
 
         const container = this.add.container(300, 400);
-
-        //container.add();
-
-
-
 
         container.add(this.add.rectangle(0, 0, 340, 600, 0x123123, 1));
 
@@ -47,7 +38,6 @@ export class DescriptionScene extends Phaser.Scene {
                 align: "center",
                 wordWrap: {width: 280, useAdvancedWrap: true}
             });
-        //(<any>text).setTextBounds(-150, -160, 150, -140);
 
         container.add(text);
 
@@ -61,9 +51,9 @@ export class DescriptionScene extends Phaser.Scene {
             }));
 
         const btn = this.add.rectangle(100, 100, 20, 20, 0x000000);
+        btn.setInteractive();
 
         btn.on("pointerdown", this.onClose, this);
-        btn.setInteractive();
 
         container.add(btn);
     }
