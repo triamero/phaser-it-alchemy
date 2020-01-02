@@ -6,6 +6,8 @@ import {DescriptionScene} from "@it/scenes/description.scene";
 export class GameScene extends Phaser.Scene {
 
     private _scroll: any;
+    private _gridSizer: any;
+    private _sizer: any;
 
     private _moving: boolean = false;
 
@@ -20,8 +22,6 @@ export class GameScene extends Phaser.Scene {
     private _clearing: boolean = false;
 
     private _db: Db = null;
-
-    private _ingredients: IngredientGameObject[] = [];
 
     protected init() {
         this._db = this.cache.json.get("db");
@@ -190,62 +190,6 @@ export class GameScene extends Phaser.Scene {
         }
     }
 
-    private onClickIngredient() {
-        // debugger;
-
-        const scene = <any>this.scene;
-
-        if (scene._moving) {
-            return;
-        }
-
-        scene._moving = true;
-
-        const me = <IngredientGameObject><any>this;
-
-        const myClone = scene.add.tweenIngredient(me.x, me.y, me.texture);
-
-        let x: number = null;
-        let y: number = null;
-
-        if (!scene._firstId) {
-            x = 75;
-            y = 175;
-        } else if (!scene._secondId) {
-            x = 525;
-            y = 175;
-        }
-
-        scene.tweens.add({
-            targets: [myClone],
-            duration: 600,
-            x: x,
-            y: y,
-            ease: "Power2",
-            onComplete: (tween: Phaser.Tweens.Tween) => {
-
-                scene._moving = false;
-
-                if (!scene._firstId) {
-                    scene._firstId = me.id;
-                    scene._first = myClone;
-                } else if (!scene._secondId) {
-                    scene._secondId = me.id;
-                    scene._second = myClone;
-                }
-
-                myClone.setSize(me.height, me.width).setInteractive();
-                myClone.on("pointerdown", () => {
-                    scene._firstId = null;
-                    scene._first = null;
-                    scene._secondId = null;
-                    scene._second = null;
-                    myClone.destroy();
-                });
-            }
-        });
-    }
-
     private _getBlueprint(): Blueprint {
 
         const front = this._db.blueprints
@@ -270,11 +214,11 @@ export class GameScene extends Phaser.Scene {
         this.cache.obj.add("points", points);
     }
 
-    createTable(scene: any) {
+    private createTable(scene: any) {
 
         const opened: number[] = this.cache.obj.get("openedIds");
 
-        const table = scene.rexUI.add.gridSizer({
+        this._gridSizer = scene.rexUI.add.gridSizer({
             column: 4,
             row: Math.floor(opened.length / 4) + 1,
         });
@@ -290,36 +234,102 @@ export class GameScene extends Phaser.Scene {
             const column = i % 4;
             const row = Math.floor(i / 4);
 
-            table.add(icon, column, row, "top", 2, true);
+            this._gridSizer.add(icon, column, row, "top", 2, true);
         }
 
-        return scene.rexUI.add
+        this._sizer = scene.rexUI.add
             .sizer({orientation: "y",})
             .addBackground(
                 scene.rexUI.add.roundRectangle(0, 0, 0, 0, 0, undefined).setStrokeStyle(2, 0x7b5e57, 1)
             )
-            .add(table, 1, "center", 5, true);
+            .add(this._gridSizer, 1, "center", 5, true);
+
+        return this._sizer;
     }
 
     createIcon(scene: any, item: any) {
 
         const label = scene.rexUI.add.label({
             orientation: "y",
-            icon: scene.add.tweenIngredient(0, 0, item.texture, item.name, item.id),
+            icon: scene.add.tweenIngredient(0, 0, item.texture, item.id),
             text: scene.add.text(0, 0, item.name)
         });
 
-        label
-            .getElement("icon")
-            .setSize(80, 85)
-            .setInteractive()
-            .on("pointerdown", this.onClickIngredient);
+        const icon = label.getElement("icon");
+
+        icon.setSize(80, 85).setInteractive()
+
+            .on("pointerdown", () => {
+
+                if (scene._moving) {
+                    return;
+                }
+
+                scene._moving = true;
+
+                const me = <TweenIngredientGameObject><any>icon;
+
+                const myClone = scene.add.tweenIngredient(me.x, me.y, me.texture, me.id);
+
+                let x: number = null;
+                let y: number = null;
+
+                if (!scene._firstId) {
+                    x = 75;
+                    y = 175;
+                } else if (!scene._secondId) {
+                    x = 525;
+                    y = 175;
+                }
+
+                scene.tweens.add({
+                    targets: [myClone],
+                    duration: 600,
+                    x: x,
+                    y: y,
+                    ease: "Power2",
+                    onComplete: (tween: Phaser.Tweens.Tween) => {
+
+                        scene._moving = false;
+
+                        if (!scene._firstId) {
+                            scene._firstId = me.id;
+                            scene._first = myClone;
+                        } else if (!scene._secondId) {
+                            scene._secondId = me.id;
+                            scene._second = myClone;
+                        }
+
+                        myClone.setSize(me.height, me.width).setInteractive();
+                        myClone.on("pointerdown", () => {
+                            scene._firstId = null;
+                            scene._first = null;
+                            scene._secondId = null;
+                            scene._second = null;
+                            myClone.destroy();
+                        });
+                    }
+                });
+            });
 
         return label;
     }
 
     addIngredient(item: any): void {
 
+        debugger;
+
+        const opened: number[] = this.cache.obj.get("openedIds");
+
+        const icon = this.createIcon(this, item);
+
+        const index = opened.length - 1;
+
+        const column = index % 4;
+        const row = Math.floor(index / 4);
+
+        this._gridSizer.add(icon, column, row, "top", 2, true);
+        this._gridSizer.layout();
     }
 
     onMouseWheel(pointer: any, event: any[], x: number, y: number): void {

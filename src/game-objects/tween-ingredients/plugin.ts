@@ -9,10 +9,10 @@ export class TweenIngredientPlugin extends Phaser.Plugins.BasePlugin {
         pluginManager.registerGameObject("tweenIngredient", this.createIngredient);
     }
 
-    createIngredient(x: number, y: number, texture: string) {
+    createIngredient(x: number, y: number, texture: string, id: number) {
 
         const me: any = this;
 
-        return me.displayList.add(new TweenIngredientGameObject(me.scene, x, y, texture));
+        return me.displayList.add(new TweenIngredientGameObject(me.scene, x, y, texture, id));
     }
 }
