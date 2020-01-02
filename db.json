@@ -22,7 +22,7 @@
       "name": "Ноль",
       "points": 0,
       "texture": "zero",
-      "description": "Самый нейстральный элемент математики и вселенной."
+      "description": "Самый нейтральный элемент математики и вселенной."
     },
     {
       "id": 4,
@@ -213,7 +213,7 @@
       "generation": 6,
       "name": "Перерыв",
       "points": 35,
-      "texture": "break",
+      "texture": "coffee-break",
       "description": "Полистать ленту, посмотреть видео с котиками или просто насладиться кофе - у каждого свой сорт перерыва"
     },
     {
@@ -261,535 +261,806 @@
       "generation": 6,
       "name": "Кофемашина",
       "points": 35,
-      "texture": ""
+      "texture": "coffee-machine",
+      "description": "Стоимость самой дорогой кофемашины превышает 1 000 000 рублей (хорошо хоть не евро)"
     },
     {
       "id": 34,
       "generation": 6,
       "name": "Shader",
-      "points": 35
+      "points": 35,
+      "texture": "shader",
+      "description": "Профессиональный рендеринг недорого"
     },
     {
       "id": 35,
       "generation": 6,
       "name": "Биткойн",
-      "points": 35
+      "points": 35,
+      "texture": "bitcoin",
+      "description": "99% человек понятия не имеют, как можно их потратить"
     },
     {
       "id": 36,
       "generation": 7,
       "name": "Hardware Engineer",
-      "points": 47
+      "points": 47,
+      "texture": "hardware-engineer",
+      "description": "Обитатель прохладных серверных, классический представитель \"тыжпрограммиста\""
     },
     {
       "id": 37,
       "generation": 7,
       "name": "Узел",
-      "points": 47
+      "points": 47,
+      "texture": "node",
+      "description": "Невод и node имею много общего"
     },
     {
       "id": 38,
       "generation": 7,
       "name": "Квантовый компьютер",
-      "points": 47
+      "points": 47,
+      "texture": "quantum-computer",
+      "description": "53-кубитному квантовому процессору приходится жить с комплексом \"квантового превосходства\""
     },
     {
       "id": 39,
       "generation": 7,
       "name": "Datacenter",
-      "points": 47
+      "points": 47,
+      "texture": "datacenter",
+      "description": "Самый большой принадлежит китайскому правительству и занимает площадь: 1920240 м2 (110 футбольных полей)"
     },
     {
       "id": 40,
       "generation": 5,
       "name": "Картинка",
-      "points": 25
+      "points": 25,
+      "texture": "picture",
+      "description": "Если не картинки, значит не было"
     },
     {
       "id": 41,
       "generation": 7,
       "name": "Manager",
-      "points": 47
+      "points": 47,
+      "texture": "manager",
+      "description": "Едет на велосипеде, который горит, и он горит, и всё горит, ещё и кнутом махать надо"
     },
     {
       "id": 42,
       "generation": 7,
       "name": "O(n!)",
-      "points": 47
+      "points": 47,
+      "texture": "onn",
+      "description": "Это сложно, лучше пойдёмте дальше собирать элементы"
     },
     {
       "id": 43,
       "generation": 7,
       "name": "Цукерберг",
-      "points": 47
+      "points": 47,
+      "texture": "zuckerberg",
+      "description": "Создатель самой крутой соцсети с самым недружелюбным интерфейсом"
     },
     {
       "id": 44,
       "generation": 7,
       "name": "Satoshi Nakamoto",
-      "points": 47
+      "points": 47,
+      "texture": "satoshi",
+      "description": "А был ли мальчик?"
     },
     {
       "id": 45,
       "generation": 7,
       "name": "Pizza",
-      "points": 47
+      "points": 47,
+      "texture": "pizza",
+      "description": "Простой и очевидный способ сделать каждого счастливым!"
     },
     {
       "id": 46,
       "generation": 7,
       "name": "Consensus",
-      "points": 47
+      "points": 47,
+      "texture": "consensus",
+      "description": "Он всегда достижим (с кровью, потом и тиранией), за исключением проблемы византийских генералов"
     },
     {
       "id": 47,
       "generation": 8,
       "name": "Сеть",
-      "points": 61
+      "points": 61,
+      "texture": "network",
+      "description": "Конектин пипл!"
     },
     {
       "id": 48,
       "generation": 8,
       "name": "Scrum Master",
-      "points": 61
+      "points": 61,
+      "texture": "scrum-master",
+      "description": "Скрам-мастер - не профессия! (с) Один из разработчиков этой игры. Кто - не скажем, а то уволят"
     },
     {
       "id": 49,
       "generation": 8,
       "name": "Кусочек",
-      "points": 61
+      "points": 61,
+      "texture": "piece",
+      "description": "Последний кусочек всегда самый лакомый"
     },
     {
       "id": 50,
       "generation": 1,
       "name": "Сообщество",
-      "points": 5
+      "points": 5,
+      "texture": "community",
+      "description": "Ты - не ты без своего комьюнити. Главное, не оказаться в комьюнити анонимных разработчиков"
     },
     {
       "id": 51,
       "generation": 3,
       "name": "Текст",
-      "points": 11
+      "points": 11,
+      "texture": "text",
+      "description": "Если текста много, то можно статью на Хабр написать"
     },
     {
       "id": 52,
       "generation": 4,
       "name": "Код",
-      "points": 17
+      "points": 17,
+      "texture": "code",
+      "description": "Это мой код. Таких кодов много, но этот мой. Мой код - мой лучший друг. Это - моя жизнь..."
     },
     {
       "id": 53,
       "generation": 5,
       "name": "Программист",
-      "points": 25
+      "points": 25,
+      "texture": "programmer",
+      "description": "Колдуны XXI века, мы проверяли"
     },
     {
       "id": 54,
       "generation": 5,
       "name": "CoffeeScript",
-      "points": 25
+      "points": 25,
+      "texture": "coffeescript",
+      "description": "Идеальный язык для лююбителей кофе и некромантии"
     },
     {
       "id": 55,
       "generation": 5,
       "name": "Fortran",
-      "points": 25
+      "points": 25,
+      "texture": "fortran",
+      "description": "Ранний Fortran был адским языком, но это всё равно лучше ассемблера"
     },
     {
       "id": 56,
       "generation": 6,
       "name": "Java",
-      "points": 35
+      "points": 35,
+      "texture": "java",
+      "description": "Ни один язык после Java не связывался с проверяемыми исключениями"
     },
     {
       "id": 57,
       "generation": 6,
       "name": "F#",
-      "points": 35
+      "points": 35,
+      "texture": "fsharp",
+      "description": "F# |> I <3"
     },
     {
       "id": 58,
       "generation": 6,
       "name": "Программа",
-      "points": 35
+      "points": 35,
+      "texture": "program",
+      "description": "Покажи мне свою программу, и я скажу, кто ты"
     },
     {
       "id": 59,
       "generation": 6,
       "name": "Опыт",
-      "points": 35
+      "points": 35,
+      "texture": "experience",
+      "description": "Программы без ошибок можно написать двумя способами, но работает - третий. И это познаётся с опытом"
     },
     {
       "id": 60,
       "generation": 6,
       "name": "Компьютерные игры",
-      "points": 35
+      "points": 35,
+      "texture": "computer-games",
+      "description": "Компьютерные игры сделали геймификацию всего окружающего мира трендом современности"
     },
     {
       "id": 61,
       "generation": 7,
       "name": "IT",
-      "points": 47
+      "points": 47,
+      "texture": "it",
+      "description": "Кондайк современности"
     },
     {
       "id": 62,
       "generation": 9,
       "name": "Системный администратор",
-      "points": 77
+      "points": 77,
+      "texture": "sysadmin",
+      "description": "Так гопорить не модно, учите новое слово - DevOps"
     },
     {
       "id": 63,
       "generation": 8,
       "name": "Cman",
-      "points": 61
+      "points": 61,
+      "texture": "cman",
+      "description": "Легендарная игра, возродившая формат текстовых квесто. Мурашки по коже!"
     },
     {
       "id": 64,
       "generation": 6,
       "name": "Habr",
-      "points": 35
+      "points": 35,
+      "texture": "Может Habr уже и не торт, но другого торта не будет"
     },
     {
       "id": 65,
       "generation": 6,
       "name": "Баг",
-      "points": 35
+      "points": 35,
+      "texture": "bug",
+      "description": "А вы знали что первым в мире найденным багом была моль?"
     },
     {
       "id": 66,
       "generation": 5,
       "name": "GitHub",
-      "points": 25
+      "points": 25,
+      "texture": "github",
+      "description": "Для любителей коммитов и рисования зелеными квадратиками"
     },
     {
       "id": 67,
       "generation": 8,
       "name": "Data Driven Company",
-      "points": 61
+      "points": 61,
+      "texture": "ddc",
+      "description": "Никто не знает что это, но ехать нужно"
     },
     {
       "id": 68,
       "generation": 8,
       "name": "Додо",
-      "points": 61
+      "points": 61,
+      "texture": "dodo",
+      "description": "Волшебная сеть пиццерий в 13 странах мира, включая Китай, США, Великобританию и Нигерию"
     },
     {
       "id": 69,
       "generation": 7,
       "name": "Error",
-      "points": 47
+      "points": 47,
+      "texture": "error",
+      "description": "Может вовсе и не error, а просто фича"
     },
     {
       "id": 70,
       "generation": 7,
       "name": "Middle",
-      "points": 47
+      "points": 47,
+      "texture": "middle",
+      "description": "Говорит \"да, я могу это сделать\", но пока не может сказать \"нет, давайте не будем так делать\""
     },
     {
       "id": 71,
       "generation": 8,
       "name": "Senior",
-      "points": 61
+      "points": 61,
+      "texture": "senior",
+      "description": "Последняя стадия эволюции программиста. Стоит дорого"
     },
     {
       "id": 72,
       "generation": 7,
       "name": "Геймер",
-      "points": 47
+      "points": 47,
+      "texture": "gamer",
+      "description": "Вся жизнь - игра, а в киберспорте ещё и платят"
     },
     {
       "id": 73,
       "generation": 7,
       "name": "Пользователь",
-      "points": 47
+      "points": 47,
+      "texture": "user",
+      "description": "Тот, кто всегда найдет сценарий, который QA не учёл"
     },
     {
       "id": 74,
       "generation": 7,
       "name": "Интерфейс",
-      "points": 47
+      "points": 47,
+      "texture": "ui",
+      "description": "Кому и командная строка - дружественный интерфейс"
     },
     {
       "id": 75,
       "generation": 7,
       "name": "Документация",
-      "points": 47
+      "points": 47,
+      "texture": "documentation",
+      "description": "И хочется, и колется, и времени на неё не хватает"
     },
     {
       "id": 76,
       "generation": 6,
       "name": "Open Source",
-      "points": 35
+      "points": 35,
+      "texture": "open-source",
+      "description": "Ходят слухи, что приверженцы Open Source - всё ещеё унылые красноглазики"
     },
     {
       "id": 77,
       "generation": 9,
       "name": "Интернет",
-      "points": 77
+      "points": 77,
+      "texture": "internet",
+      "description": "Весь интернет со всем его цифровым содержимым весит 50 грамм"
     },
     {
       "id": 78,
-      "generation": 5,
-      "name": "Assembler",
-      "points": 25
+      "generation": 8,
+      "name": "Raft",
+      "points": 61,
+      "texture": "raft",
+      "description": "Плот. Вы английский вообще в школе учили?"
     },
     {
       "id": 79,
       "generation": 5,
-      "name": "SQL",
-      "points": 25
+      "name": "Assembler",
+      "points": 25,
+      "texture": "asm",
+      "description": "Для программистов с длинной бородой, видевших доисторические компьютеры"
     },
     {
       "id": 80,
-      "generation": 6,
-      "name": "Legacy",
-      "points": 35
+      "generation": 5,
+      "name": "SQL",
+      "points": 25,
+      "texture": "sql",
+      "description": "Декларативное > Императивное"
     },
     {
       "id": 81,
       "generation": 6,
-      "name": "Парное программирование",
-      "points": 35
+      "name": "Legacy",
+      "points": 35,
+      "texture": "legacy",
+      "description": "Тяжёлая наследственность"
     },
     {
       "id": 82,
-      "generation": 10,
-      "name": "Script",
-      "points": 95
+      "generation": 6,
+      "name": "Парное программирование",
+      "points": 35,
+      "texture": "pair-programming",
+      "description": "Ведите себя прилично, работайте в парах (с) Антон Бевзюк"
     },
     {
       "id": 83,
-      "generation": 7,
-      "name": "Тестировщик",
-      "points": 47
+      "generation": 10,
+      "name": "Script",
+      "points": 95,
+      "texture": "script",
+      "description": "Кто писал на PowerShell, тот в цирке больше не смеётся"
     },
     {
       "id": 84,
       "generation": 7,
-      "name": "Тесты",
-      "points": 47
+      "name": "Тестировщик",
+      "points": 47,
+      "texture": "tester",
+      "description": "Хилеры кода, мы проверяли"
     },
     {
       "id": 85,
-      "generation": 8,
-      "name": "QA",
-      "points": 61
+      "generation": 7,
+      "name": "Тесты",
+      "points": 47,
+      "texture": "tests",
+      "description": "Краснеют в самый неподходящий момент"
     },
     {
       "id": 86,
       "generation": 8,
-      "name": "UX",
-      "points": 61
+      "name": "QA",
+      "points": 61,
+      "texture": "Хилеры колдунов XXI века, мы проверяли"
     },
     {
       "id": 87,
-      "generation": 7,
-      "name": "Компилятор",
-      "points": 47
+      "generation": 8,
+      "name": "UX",
+      "points": 61,
+      "texture": "ux",
+      "description": "Словосочетание UX придумал Дональд Норман в 1993 году, когда работал в Apple"
     },
     {
       "id": 88,
-      "generation": 8,
-      "name": "C",
-      "points": 61
+      "generation": 7,
+      "name": "Компилятор",
+      "points": 47,
+      "texture": "compiler",
+      "description": "Всегда готовый пересказать машине то, чего же вы от неё хотели добиться своим кодом"
     },
     {
       "id": 89,
-      "generation": 9,
-      "name": "C++",
-      "points": 77
+      "generation": 8,
+      "name": "C",
+      "points": 61,
+      "texture": "c",
+      "description": "Нужен был язык, способный обойти жесткие правила... Так и появился великий и могучий C"
     },
     {
       "id": 90,
-      "generation": 7,
-      "name": "Stallman",
-      "points": 47
+      "generation": 9,
+      "name": "C++",
+      "points": 77,
+      "texture": "c-plus-plus",
+      "description": "C++ всех победит"
     },
     {
       "id": 91,
-      "generation": 6,
-      "name": "Basic",
-      "points": 35
+      "generation": 7,
+      "name": "Stallman",
+      "points": 47,
+      "texture": "stallman",
+      "description": "Свободу ПО!"
     },
     {
       "id": 92,
-      "generation": 7,
-      "name": "MS-DOS",
-      "points": 47
+      "generation": 6,
+      "name": "Basic",
+      "points": 35,
+      "texture": "basic",
+      "description": "Золото на голубом - услада глаз для тех, кто в теме, а не эти ваши светлые/тёмные темы"
     },
     {
       "id": 93,
-      "generation": 8,
-      "name": "Windows",
-      "points": 61
+      "generation": 7,
+      "name": "MS-DOS",
+      "points": 47,
+      "texture": "dos",
+      "description": "Знакома с командами dir, md, cd, rd, deltree, move, path"
     },
     {
       "id": 94,
-      "generation": 9,
-      "name": "Bill Gates",
-      "points": 77
+      "generation": 8,
+      "name": "Windows",
+      "points": 61,
+      "texture": "windows",
+      "description": "Билл Гейтс хотел назвать Windows 1.0 (выпущенный в 1985 году) довольно тускло - Interface Manager"
     },
     {
       "id": 95,
-      "generation": 10,
-      "name": "Microsoft",
-      "points": 95
+      "generation": 9,
+      "name": "Bill Gates",
+      "points": 77,
+      "texture": "gates",
+      "description": "Билл Гейтс назвал чтение и жевание дужек очков основными занятиями в своей жизни"
     },
     {
       "id": 96,
-      "generation": 9,
-      "name": "Linux",
-      "points": 77
+      "generation": 10,
+      "name": "Microsoft",
+      "points": 95,
+      "texture": "microsoft",
+      "description": "Законодатели моды на странные вопросы на собеседованиях"
     },
     {
       "id": 97,
-      "generation": 10,
-      "name": "Линус Торвальдс",
-      "points": 95
+      "generation": 9,
+      "name": "Linux",
+      "points": 77,
+      "texture": "linux",
+      "description": "У пингвина есть имя - Tux"
     },
     {
       "id": 98,
-      "generation": 9,
-      "name": "Экран",
-      "points": 77
+      "generation": 10,
+      "name": "Линус Торвальдс",
+      "points": 95,
+      "texture": "linus",
+      "description": "Любит пиво Guinness и пострелять из пистолета"
     },
     {
       "id": 99,
-      "generation": 10,
-      "name": "Facebook",
-      "points": 95
+      "generation": 9,
+      "name": "Экран",
+      "points": 77,
+      "texture": "screen",
+      "description": "Удобно, когда три монитора. И как некоторые справляются с одним..."
     },
     {
       "id": 100,
-      "generation": 11,
-      "name": "Visual Studio",
-      "points": 115
+      "generation": 10,
+      "name": "Facebook",
+      "points": 95,
+      "texture": "fb",
+      "description": "Вот что случается, когда четыре студента Гарвадского университета хотят развлечься"
     },
     {
       "id": 101,
       "generation": 11,
-      "name": ".NET",
-      "points": 115
+      "name": "Visual Studio",
+      "points": 115,
+      "texture": "vs",
+      "description": "Отличный инструмент. Когда у тебя в руках такой молоток, всё вокруг кажется гвоздями"
     },
     {
       "id": 102,
-      "generation": 10,
-      "name": "Облака",
-      "points": 95
+      "generation": 11,
+      "name": ".NET",
+      "points": 115,
+      "texture": "dotnet",
+      "description": "Тот, кто собрал нас здесь сегодня"
     },
     {
       "id": 103,
-      "generation": 11,
-      "name": "Azure",
-      "points": 115
+      "generation": 10,
+      "name": "Облака",
+      "points": 95,
+      "texture": "clouds",
+      "description": "Облака вида Кельвина-Гельмгольца очень похожи на морские волны. Загуглите!"
     },
     {
       "id": 104,
       "generation": 11,
-      "name": "Docker",
-      "points": 115
+      "name": "Azure",
+      "points": 115,
+      "texture": "azure",
+      "description": "Дорогие, но необходимые как воздух облака"
     },
     {
       "id": 105,
-      "generation": 12,
-      "name": "Kubernetes",
-      "points": 137
+      "generation": 11,
+      "name": "Docker",
+      "points": 115,
+      "texture": "docker",
+      "description": "Спецдевайс для пиццы (а не кит с контейнерами)! Помогает высвободить из теста пузырьки воздуха"
     },
     {
       "id": 106,
-      "generation": 13,
-      "name": "SRE",
-      "points": 161
+      "generation": 12,
+      "name": "Kubernetes",
+      "points": 137,
+      "texture": "k8s",
+      "description": "сли у вас есть проблема и вы решаете её с помозью k8s - теперь у вас две проблемы"
     },
     {
       "id": 107,
-      "generation": 12,
-      "name": "C#",
-      "points": 137
+      "generation": 13,
+      "name": "SRE",
+      "points": 161,
+      "texture": "sre",
+      "description": "Ты че, как я тебе DevOps?! Я - SRE!"
     },
     {
       "id": 108,
-      "generation": 13,
-      "name": "Рихтер",
-      "points": 161
+      "generation": 12,
+      "name": "C#",
+      "points": 137,
+      "texture": "csharp",
+      "description": "<3"
     },
     {
       "id": 109,
       "generation": 13,
-      "name": "Holywar",
-      "points": 161
+      "name": "Рихтер",
+      "points": 161,
+      "texture": "richter",
+      "description": "Лицензированный пилот, икона, член International Brotherhood of Magicians"
     },
     {
       "id": 110,
-      "generation": 10,
-      "name": "HTML",
-      "points": 95
+      "generation": 13,
+      "name": "Holywar",
+      "points": 161,
+      "texture": "holywar",
+      "description": "Ребят, ну Java ведь объективно лучше C#, о чём тут спорить?"
     },
     {
       "id": 111,
       "generation": 10,
-      "name": "JavaScript",
-      "points": 95
+      "name": "HTML",
+      "points": 95,
+      "texture": "html",
+      "description": "Размечает лучше сына маминой подруги"
     },
     {
       "id": 112,
       "generation": 10,
-      "name": "Сайт",
-      "points": 95
+      "name": "JavaScript",
+      "points": 95,
+      "texture": "js",
+      "description": "Что ты думаешь о сравнению разных типов в JS?"
     },
     {
       "id": 113,
-      "generation": 11,
-      "name": "dodopizza.ru",
-      "points": 115
+      "generation": 10,
+      "name": "Сайт",
+      "points": 95,
+      "texture": "site",
+      "description": "https://dodois.com"
     },
     {
       "id": 114,
-      "generation": 13,
-      "name": "Backend",
-      "points": 161
+      "generation": 11,
+      "name": "dodopizza.ru",
+      "points": 115,
+      "texture": "dodopizza-ru",
+      "description": "Доставка пиццы №1 в России"
     },
     {
       "id": 115,
-      "generation": 11,
-      "name": "Frontend",
-      "points": 115
+      "generation": 13,
+      "name": "Backend",
+      "points": 161,
+      "texture": "backend",
+      "description": "Real Hardcore!"
     },
     {
       "id": 116,
-      "generation": 8,
-      "name": "Тикет",
-      "points": 61
+      "generation": 11,
+      "name": "Frontend",
+      "points": 115,
+      "texture": "frontend",
+      "description": "Меняют фреймворки как перчатки. Одно слово - хипстеры"
     },
     {
       "id": 117,
-      "generation": 6,
-      "name": "Реляционная БД",
-      "points": 35
+      "generation": 8,
+      "name": "Тикет",
+      "points": 61,
+      "texture": "ticket",
+      "description": "Документ, без которого жалобы QA в сторону разработчиков не заслушиваются"
     },
     {
       "id": 118,
-      "generation": 8,
-      "name": "Autotests",
-      "points": 61
+      "generation": 6,
+      "name": "Реляционная БД",
+      "points": 35,
+      "texture": "rdbms",
+      "description": "Эдгар Франк \"Тед\" Кодд предложил использовать реляционные БД ещё в 1970 году... когда это не было мейнстримом"
     },
     {
       "id": 119,
-      "generation": 9,
-      "name": "Синий экран",
-      "points": 77
+      "generation": 8,
+      "name": "Autotests",
+      "points": 61,
+      "texture": "autotests",
+      "description": "Загадка: Зимой и летом красного цвета?"
     },
     {
       "id": 120,
-      "generation": 11,
-      "name": ".Net Core",
-      "points": 115
+      "generation": 9,
+      "name": "Синий экран",
+      "points": 77,
+      "texture": "death-screen",
+      "description": "У Синего экрана смерти есть два старших брата - Красный и Чёрный экраны смерти"
     },
     {
       "id": 121,
+      "generation": 11,
+      "name": ".Net Core",
+      "points": 115,
+      "texture": "dotnetcore",
+      "description": "Кровный родственник .NET Framework с открытым кодом"
+    },
+    {
+      "id": 122,
       "generation": 12,
       "name": "DotNext",
-      "points": 137
+      "points": 137,
+      "texture": "dotnext",
+      "description": "Лучшая конфа о настоящем и будущем .Net платформы"
+    },
+    {
+      "id": 123,
+      "generation": 9,
+      "name": "Dodo IS",
+      "points": 77,
+      "texture": "dodo-is",
+      "description": "Собственная система управления магическим миром Dodo"
+    },
+    {
+      "id": 124,
+      "generation": 11,
+      "name": "dodois.com",
+      "points": 115,
+      "texture": "dodo-is-com",
+      "description": "Куда же на конференции без открытых вакансий, хантинга и прочих сказочных вещичек. Приходи к нам, будет интересно!"
+    },
+    {
+      "id": 125,
+      "generation": 8,
+      "name": "Робот пицайоло",
+      "points": 61,
+      "texture": "pizza-robot",
+      "description": "Робот, француз и пиццмейкер"
+    },
+    {
+      "id": 126,
+      "generation": 8,
+      "name": "Комбо",
+      "points": 61,
+      "texture": "combo",
+      "description": "Комбо - бомбо! 16 вариантов уже на сайте!"
+    },
+    {
+      "id": 127,
+      "generation": 9,
+      "name": "IT-алхимия",
+      "points": 77,
+      "texture": "alchemy",
+      "description": "Сказочная игра от Dodo Pizza Engineering с ноткой ностальгии"
+    },
+    {
+      "id": 128,
+      "generation": 9,
+      "name": "Дрон",
+      "points": 77,
+      "texture": "drone",
+      "description": "Все, кто тяжелее 250 грамм - беспилотные воздешные судна, а вы внешний пилот. Всё серьёзно!"
+    },
+    {
+      "id": 129,
+      "generation": 10,
+      "name": "Таня",
+      "points": 95,
+      "texture": "tanya",
+      "description": "Нарисовала все эти чудесные картиночки"
+    },
+    {
+      "id": 130,
+      "generation": 10,
+      "name": "Лиза",
+      "points": 95,
+      "texture": "liza",
+      "description": "Она не только придумала стенд для конфы, но и не позволила команде поубивать друг друга!"
+    },
+    {
+      "id": 131,
+      "generation": 10,
+      "name": "Антон",
+      "points": 95,
+      "texture": "anton",
+      "description": "если тебе кажутся нелогичными какие-то сочетания, жалуйся этому человеку"
+    },
+    {
+      "id": 132,
+      "generation": 10,
+      "name": "Женя",
+      "points": 95,
+      "texture": "genya",
+      "description": "Кодит на Unity за еду. В том и эту игру"
+    },
+    {
+      "id": 133,
+      "generation": 14,
+      "name": "Миша",
+      "points": 187,
+      "texture": "misha",
+      "description": "Создал для этой игры бриллиантовый бэкенд"
     }
   ],
   "blueprints": [
@@ -1164,134 +1435,139 @@
       "resultId": 77
     },
     {
-      "firstId": 52,
-      "secondId": 14,
+      "firstId": 46,
+      "secondId": 50,
       "resultId": 78
     },
     {
       "firstId": 52,
-      "secondId": 13,
+      "secondId": 14,
       "resultId": 79
     },
     {
       "firstId": 52,
-      "secondId": 18,
+      "secondId": 13,
       "resultId": 80
+    },
+    {
+      "firstId": 52,
+      "secondId": 18,
+      "resultId": 81
     },
     {
       "firstId": 53,
       "secondId": 53,
-      "resultId": 81
+      "resultId": 82
     },
     {
       "firstId": 62,
       "secondId": 52,
-      "resultId": 82
-    },
-    {
-      "firstId": 65,
-      "secondId": 1,
       "resultId": 83
     },
     {
       "firstId": 65,
-      "secondId": 52,
+      "secondId": 1,
       "resultId": 84
     },
     {
-      "firstId": 83,
-      "secondId": 83,
+      "firstId": 65,
+      "secondId": 52,
       "resultId": 85
+    },
+    {
+      "firstId": 84,
+      "secondId": 84,
+      "resultId": 86
     },
     {
       "firstId": 74,
       "secondId": 73,
-      "resultId": 86
-    },
-    {
-      "firstId": 78,
-      "secondId": 58,
       "resultId": 87
     },
     {
-      "firstId": 87,
-      "secondId": 78,
+      "firstId": 79,
+      "secondId": 58,
       "resultId": 88
     },
     {
       "firstId": 88,
-      "secondId": 88,
+      "secondId": 79,
       "resultId": 89
+    },
+    {
+      "firstId": 89,
+      "secondId": 89,
+      "resultId": 90
     },
     {
       "firstId": 53,
       "secondId": 76,
-      "resultId": 90
-    },
-    {
-      "firstId": 78,
-      "secondId": 1,
       "resultId": 91
     },
     {
-      "firstId": 78,
-      "secondId": 29,
-      "resultId": 88
-    },
-    {
-      "firstId": 91,
-      "secondId": 24,
+      "firstId": 79,
+      "secondId": 1,
       "resultId": 92
     },
     {
+      "firstId": 79,
+      "secondId": 29,
+      "resultId": 89
+    },
+    {
       "firstId": 92,
-      "secondId": 74,
+      "secondId": 24,
       "resultId": 93
     },
     {
       "firstId": 93,
-      "secondId": 1,
+      "secondId": 74,
       "resultId": 94
     },
     {
       "firstId": 94,
-      "secondId": 93,
+      "secondId": 1,
       "resultId": 95
     },
     {
-      "firstId": 93,
-      "secondId": 76,
+      "firstId": 95,
+      "secondId": 94,
       "resultId": 96
     },
     {
-      "firstId": 96,
-      "secondId": 53,
+      "firstId": 94,
+      "secondId": 76,
       "resultId": 97
     },
     {
-      "firstId": 93,
-      "secondId": 24,
+      "firstId": 97,
+      "secondId": 53,
       "resultId": 98
     },
     {
-      "firstId": 98,
+      "firstId": 94,
+      "secondId": 24,
+      "resultId": 99
+    },
+    {
+      "firstId": 99,
       "secondId": 8,
       "resultId": 25
     },
     {
       "firstId": 43,
       "secondId": 77,
-      "resultId": 99
-    },
-    {
-      "firstId": 89,
-      "secondId": 95,
       "resultId": 100
     },
     {
-      "firstId": 95,
-      "secondId": 56,
+      "firstId": 90,
+      "secondId": 96,
       "resultId": 101
+    },
+    {
+      "firstId": 96,
+      "secondId": 56,
+      "resultId": 102
     },
     {
       "firstId": 77,
@@ -1301,107 +1577,162 @@
     {
       "firstId": 77,
       "secondId": 39,
-      "resultId": 102
-    },
-    {
-      "firstId": 102,
-      "secondId": 95,
       "resultId": 103
     },
     {
-      "firstId": 102,
+      "firstId": 103,
       "secondId": 96,
       "resultId": 104
     },
     {
-      "firstId": 104,
-      "secondId": 102,
+      "firstId": 103,
+      "secondId": 97,
       "resultId": 105
     },
     {
       "firstId": 105,
-      "secondId": 53,
+      "secondId": 103,
       "resultId": 106
     },
     {
-      "firstId": 104,
-      "secondId": 104,
-      "resultId": 105
-    },
-    {
-      "firstId": 101,
-      "secondId": 52,
+      "firstId": 106,
+      "secondId": 53,
       "resultId": 107
     },
     {
-      "firstId": 107,
-      "secondId": 53,
+      "firstId": 105,
+      "secondId": 105,
+      "resultId": 106
+    },
+    {
+      "firstId": 102,
+      "secondId": 52,
       "resultId": 108
     },
     {
-      "firstId": 107,
-      "secondId": 56,
+      "firstId": 108,
+      "secondId": 53,
       "resultId": 109
+    },
+    {
+      "firstId": 108,
+      "secondId": 56,
+      "resultId": 110
     },
     {
       "firstId": 51,
       "secondId": 77,
-      "resultId": 110
-    },
-    {
-      "firstId": 77,
-      "secondId": 52,
       "resultId": 111
     },
     {
       "firstId": 77,
-      "secondId": 58,
+      "secondId": 52,
       "resultId": 112
     },
     {
-      "firstId": 112,
-      "secondId": 68,
+      "firstId": 77,
+      "secondId": 58,
       "resultId": 113
     },
     {
-      "firstId": 112,
-      "secondId": 107,
+      "firstId": 113,
+      "secondId": 68,
       "resultId": 114
     },
     {
-      "firstId": 111,
-      "secondId": 53,
+      "firstId": 113,
+      "secondId": 108,
       "resultId": 115
+    },
+    {
+      "firstId": 112,
+      "secondId": 53,
+      "resultId": 116
     },
     {
       "firstId": 73,
       "secondId": 65,
-      "resultId": 116
-    },
-    {
-      "firstId": 79,
-      "secondId": 13,
       "resultId": 117
     },
     {
-      "firstId": 84,
-      "secondId": 58,
+      "firstId": 80,
+      "secondId": 13,
       "resultId": 118
     },
     {
-      "firstId": 93,
-      "secondId": 65,
+      "firstId": 85,
+      "secondId": 58,
       "resultId": 119
     },
     {
-      "firstId": 95,
-      "secondId": 76,
+      "firstId": 94,
+      "secondId": 65,
       "resultId": 120
     },
     {
-      "firstId": 101,
-      "secondId": 50,
+      "firstId": 96,
+      "secondId": 76,
       "resultId": 121
+    },
+    {
+      "firstId": 102,
+      "secondId": 50,
+      "resultId": 122
+    },
+    {
+      "firstId": 68,
+      "secondId": 61,
+      "resultId": 123
+    },
+    {
+      "firstId": 123,
+      "secondId": 113,
+      "resultId": 124
+    },
+    {
+      "firstId": 45,
+      "secondId": 21,
+      "resultId": 125
+    },
+    {
+      "firstId": 45,
+      "secondId": 45,
+      "resultId": 126
+    },
+    {
+      "firstId": 68,
+      "secondId": 60,
+      "resultId": 127
+    },
+    {
+      "firstId": 68,
+      "secondId": 21,
+      "resultId": 128
+    },
+    {
+      "firstId": 127,
+      "secondId": 40,
+      "resultId": 129
+    },
+    {
+      "firstId": 127,
+      "secondId": 41,
+      "resultId": 130
+    },
+    {
+      "firstId": 127,
+      "secondId": 51,
+      "resultId": 131
+    },
+    {
+      "firstId": 127,
+      "secondId": 53,
+      "resultId": 132
+    },
+    {
+      "firstId": 127,
+      "secondId": 115,
+      "resultId": 133
     }
   ]
 }
