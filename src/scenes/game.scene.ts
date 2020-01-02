@@ -126,15 +126,17 @@ export class GameScene extends Phaser.Scene {
 
                         const opnd: number[] = this.cache.obj.get("openedIds");
 
-                        opnd.push(result.id);
+                        if (!opnd.some(x => x === result.id)) {
+                            opnd.push(result.id);
 
-                        console.log(opnd);
+                            console.log(opnd);
 
-                        const s = JSON.stringify(opnd);
+                            const s = JSON.stringify(opnd);
 
-                        console.log(s);
+                            console.log(s);
 
-                        localStorage.setItem("openedIds", s);
+                            localStorage.setItem("openedIds", s);
+                        }
                     }
                 });
             }

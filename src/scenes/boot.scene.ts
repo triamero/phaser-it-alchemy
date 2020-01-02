@@ -35,6 +35,13 @@ export class BootScene extends Phaser.Scene {
         this.load.image("one", "assets/one.png");
         this.load.image("energy", "assets/energy.png");
         this.load.image("mathematics", "assets/mathematics.png");
+        this.load.image("infinity", "assets/infinity.png");
+        this.load.image("2d", "assets/2d.png");
+        this.load.image("3d", "assets/3d.png");
+        this.load.image("cpu", "assets/cpu.png");
+        this.load.image("dimension", "assets/dimension.png");
+        this.load.image("bit", "assets/bit.png");
+        this.load.image("time", "assets/time.png");
     }
 
     create() {
