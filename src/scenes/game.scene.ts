@@ -31,12 +31,19 @@ export class GameScene extends Phaser.Scene {
     }
 
     preload() {
+
         const hud = this.scene.launch("hud");
 
         this._opened = this.cache.obj.get("opened");
 
         this.load.tilemapTiledJSON("game", "assets/alchemy.json");
         this.load.image("game-tilemap", "assets/tilebag.png");
+
+        this.load.scenePlugin({
+            key: "rexuiplugin",
+            url: "src/scripts/rexuiplugin.min.js",
+            sceneKey: 'rexUI'
+        });
     }
 
     protected create() {
@@ -47,8 +54,8 @@ export class GameScene extends Phaser.Scene {
 
         const tileset = map.addTilesetImage("tilebag", "game-tilemap", 90, 90);
 
-        const background = map.createStaticLayer("background", tileset, 0, 0);
-        const foreground = map.createStaticLayer("foreground", tileset, 0, 0);
+        map.createStaticLayer("background", tileset, 0, 0);
+        map.createStaticLayer("foreground", tileset, 0, 0);
 
         const firstRect = new Phaser.Geom.Rectangle(30, 130, 90, 90);
         const anvilRect = new Phaser.Geom.Rectangle(255, 130, 90, 90);
@@ -58,13 +65,41 @@ export class GameScene extends Phaser.Scene {
         Helper.createRectangle(this, anvilRect);
         Helper.createRectangle(this, secondRect);
 
-        const opened: number[] = this.cache.obj.get("openedIds");
-
-        this._ingredients = opened
-            .map(x => this._db.items.find(i => i.id === x))
-            .map((x: Item, index: number) => this.createIngredient(x, index));
-
         this._recalculatePoints();
+
+        me.rexUI.add
+            .scrollablePanel({
+                x: 300,
+                y: 500,
+                width: 600,
+                height: 450,
+                scrollMode: 0,
+                background: me.rexUI.add.roundRectangle(0, 0, 2, 2, 10, 0x4e342e),
+
+                panel: {
+                    child: me.rexUI.add
+                        .sizer({
+                            orientation: 'x',
+                        })
+                        .add(this.createTable(me), 0, 'top', {right: 8,}, true),
+                },
+
+                scroller: {
+                    threshold: 10,
+                    slidingDeceleration: 5000,
+                    backDeceleration: 2000,
+                },
+
+                space: {
+                    left: 10,
+                    right: 10,
+                    top: 10,
+                    bottom: 10,
+
+                    panel: 10,
+                }
+            })
+            .layout();
     }
 
 
@@ -77,8 +112,6 @@ export class GameScene extends Phaser.Scene {
             if (blueprint) {
 
                 this._merge = true;
-
-                //this._ingredients.forEach(x => x.input.enabled = false);
 
                 this.tweens.add({
                     targets: [this._first, this._second],
@@ -116,22 +149,18 @@ export class GameScene extends Phaser.Scene {
 
                             const handle = "description" + this._counter++;
 
-                            var win = this.add.zone(0, 0, 600, 800);
+                            const win = this.add.zone(0, 0, 600, 800);
 
                             const scene = new DescriptionScene(handle, win);
 
                             this.scene.add(handle, scene, true, result);
                             opnd.push(result.id);
 
-                            console.log(opnd);
-
                             const s = JSON.stringify(opnd);
-
-                            console.log(s);
 
                             localStorage.setItem("openedIds", s);
 
-                            this.createIngredient(result, opnd.length - 1);
+                            this.addIngredient(result);
 
                             this._recalculatePoints();
                         }
@@ -165,6 +194,7 @@ export class GameScene extends Phaser.Scene {
     }
 
     private onClickIngredient() {
+        // debugger;
 
         const scene = <any>this.scene;
 
@@ -189,7 +219,7 @@ export class GameScene extends Phaser.Scene {
             y = 175;
         }
 
-        const tween1 = scene.tweens.add({
+        scene.tweens.add({
             targets: [myClone],
             duration: 600,
             x: x,
@@ -219,29 +249,6 @@ export class GameScene extends Phaser.Scene {
         });
     }
 
-    private getNextPlace(index: number): number[] {
-
-        const horizontalPosition = index % 4;
-        const verticalPosition = Math.floor(index / 4);
-
-        return [90 + 40 + horizontalPosition * (25 + 80), 290 + verticalPosition * 90]
-    }
-
-    private createIngredient(item: Item, index: number) {
-
-        var me: any = this;
-
-        const place = this.getNextPlace(index);
-
-        const ingredient: IngredientGameObject = me.add.ingredient(place[0], place[1], item.texture, item.name, item.id);
-        ingredient.setSize(90, 90);
-        ingredient.setInteractive();
-
-        ingredient.on("pointerdown", this.onClickIngredient);
-
-        return ingredient;
-    }
-
     private _getBlueprint(): Blueprint {
 
         const front = this._db.blueprints
@@ -264,6 +271,58 @@ export class GameScene extends Phaser.Scene {
             .reduce((prev, curr) => prev + curr);
 
         this.cache.obj.add("points", points);
+    }
+
+    createTable(scene: any) {
+
+        const opened: number[] = this.cache.obj.get("openedIds");
+
+        const table = scene.rexUI.add.gridSizer({
+            column: 4,
+            row: Math.floor(opened.length / 4) + 1,
+        });
+
+        const items = opened.map(x => this._db.items.find(i => i.id === x));
+
+        for (let i = 0, cnt = items.length; i < cnt; i++) {
+
+            const item = items[i];
+
+            const icon = this.createIcon(scene, item);
+
+            const column = i % 4;
+            const row = Math.floor(i / 4);
+
+            table.add(icon, column, row, "top", 2, true);
+        }
+
+        return scene.rexUI.add
+            .sizer({orientation: "y",})
+            .addBackground(
+                scene.rexUI.add.roundRectangle(0, 0, 0, 0, 0, undefined).setStrokeStyle(2, 0x7b5e57, 1)
+            )
+            .add(table, 1, "center", 5, true);
+    }
+
+    createIcon(scene: any, item: any) {
+
+        const label = scene.rexUI.add.label({
+            orientation: "y",
+            icon: scene.add.tweenIngredient(0, 0, item.texture, item.name, item.id),
+            text: scene.add.text(0, 0, item.name)
+        });
+
+        label
+            .getElement("icon")
+            .setSize(80, 80)
+            .setInteractive()
+            .on("pointerdown", this.onClickIngredient);
+
+        return label;
+    }
+
+    addIngredient(item: any): void {
+
     }
 
 }
