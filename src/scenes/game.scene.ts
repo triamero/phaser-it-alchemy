@@ -246,7 +246,7 @@ export class GameScene extends Phaser.Scene {
 
     createIcon(scene: any, item: any) {
 
-        var txt = scene.add.text(0, 0, item.name, {align: "center", wordWrap:{width: 150, useAdvancedWrap: true}});
+        var txt = scene.add.text(0, 0, item.name, {align: "center", wordWrap: {width: 150, useAdvancedWrap: true}});
 
         const label = scene.rexUI.add.label({
             orientation: "y",
@@ -343,6 +343,8 @@ export class GameScene extends Phaser.Scene {
 
         if (oy > 0) {
             oy = 0;
+        } else if (oy < this._scroll.bottomChildOY) {
+            oy = this._scroll.bottomChildOY;
         }
 
         this._scroll.childOY = oy;

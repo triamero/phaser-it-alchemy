@@ -28,7 +28,7 @@ export class DescriptionScene extends Phaser.Scene {
 
         container.add(this.add.rectangle(0, 0, 340, 600, 0x123123, 1));
 
-        container.add(this.add.image(0, -225, this.item.texture));
+        container.add((<any>this).add.tweenIngredient(0, -225, this.item.texture, this.item.id));
 
         const text = this.add.text(
             -120,
