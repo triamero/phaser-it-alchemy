@@ -1,5 +1,4 @@
 import * as Phaser from "phaser";
-import {Db} from "@it/shared";
 
 export class HudScene extends Phaser.Scene {
 

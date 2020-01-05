@@ -241,12 +241,10 @@ export class GameScene extends Phaser.Scene {
 
     createIcon(scene: any, item: any) {
 
-        var txt = scene.add.text(0, 0, item.name, {align: "center", wordWrap: {width: 150, useAdvancedWrap: true}});
-
         const label = scene.rexUI.add.label({
             orientation: "y",
             icon: scene.add.tweenIngredient(0, 0, item.texture, item.id),
-            text: txt
+            text: scene.add.text(0, 0, item.name, {align: "center", wordWrap: {width: 150, useAdvancedWrap: true}})
         });
 
         const icon = label.getElement("icon");

@@ -4,7 +4,7 @@ import {Item} from "@it/shared";
 export class DescriptionScene extends Phaser.Scene {
 
     private item: Item;
-    private _handle: string;
+    private readonly _handle: string;
 
     constructor(handle: string, parent: any) {
         super(handle);
@@ -22,7 +22,7 @@ export class DescriptionScene extends Phaser.Scene {
 
         const parent = (<any>this).parent;
 
-        const backdrop = this.add.rectangle(parent.x, parent.y, 1200, 2200, 0x000000, 0.3);
+        this.add.rectangle(parent.x, parent.y, 1200, 2200, 0x000000, 0.3);
 
         const container = this.add.container(300, 400);
 
