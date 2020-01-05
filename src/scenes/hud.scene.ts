@@ -24,8 +24,8 @@ export class HudScene extends Phaser.Scene {
 
         this._label1 = this.add.text(0, 2, "[Points:0]", {fontFamily: '"Consolas"', fontSize: "26px"});
         this._label2 = this.add.text(0, 2, "[Opened:0/0]", {fontFamily: '"Consolas"', fontSize: "26px"});
-        this.add.container(400, 30, [rect1, this._label1]);
-        this.add.container(400, 59, [rect2, this._label2]);
+        this.add.container(300, 30, [rect1, this._label1]);
+        this.add.container(300, 59, [rect2, this._label2]);
 
         console.log("preload hud completed");
     }

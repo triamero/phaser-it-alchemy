@@ -1,6 +1,6 @@
 import * as Phaser from "phaser";
-import {Blueprint, Db, Helper, Item} from "@it/shared";
-import {IngredientGameObject, TweenIngredientGameObject} from "@it/game-objects";
+import {Blueprint, Db, Helper} from "@it/shared";
+import {TweenIngredientGameObject} from "@it/game-objects";
 import {DescriptionScene} from "@it/scenes/description.scene";
 
 export class GameScene extends Phaser.Scene {
@@ -9,8 +9,6 @@ export class GameScene extends Phaser.Scene {
     private _gridSizer: any;
     private _sizer: any;
 
-    private _moving: boolean = false;
-
     private _counter: number = 0;
 
     private _firstId: number;
@@ -18,6 +16,7 @@ export class GameScene extends Phaser.Scene {
     private _secondId: number;
     private _second: TweenIngredientGameObject;
 
+    private _moving: boolean = false;
     private _merging: boolean = false;
     private _clearing: boolean = false;
 
@@ -29,7 +28,7 @@ export class GameScene extends Phaser.Scene {
 
     protected preload() {
 
-        const hud = this.scene.launch("hud");
+        this.scene.launch("hud");
 
         this.load.tilemapTiledJSON("game", "assets/alchemy.json");
         this.load.image("game-tilemap", "assets/tilebag.png");
@@ -131,10 +130,10 @@ export class GameScene extends Phaser.Scene {
                         this.tweens.add({
                             targets: [tw],
                             alpha: {from: 1, to: 0},
-                            ease: "linear",
+                            ease: "Power2",
                             duration: 500,
                             onComplete: () => {
-                                tw.destroy();
+                                tw?.destroy();
                             }
                         });
 
@@ -180,7 +179,7 @@ export class GameScene extends Phaser.Scene {
                     duration: 500,
                     onComplete: () => {
                         this._secondId = null;
-                        this._second.destroy();
+                        this._second?.destroy();
                         this._second = null;
 
                         this._clearing = false;
@@ -248,11 +247,14 @@ export class GameScene extends Phaser.Scene {
     }
 
     createIcon(scene: any, item: any) {
+        //debugger;
+
+        var txt = scene.add.text(0, 0, item.name, {align: "center", wordWrap:{width: 120, useAdvancedWrap: true}});
 
         const label = scene.rexUI.add.label({
             orientation: "y",
             icon: scene.add.tweenIngredient(0, 0, item.texture, item.id),
-            text: scene.add.text(0, 0, item.name)
+            text: txt
         });
 
         const icon = label.getElement("icon");
@@ -261,7 +263,7 @@ export class GameScene extends Phaser.Scene {
 
             .on("pointerdown", () => {
 
-                if (scene._moving) {
+                if (scene._moving || scene._merging || scene._clearing) {
                     return;
                 }
 
@@ -288,7 +290,7 @@ export class GameScene extends Phaser.Scene {
                     x: x,
                     y: y,
                     ease: "Power2",
-                    onComplete: (tween: Phaser.Tweens.Tween) => {
+                    onComplete: () => {
 
                         scene._moving = false;
 
@@ -306,7 +308,7 @@ export class GameScene extends Phaser.Scene {
                             scene._first = null;
                             scene._secondId = null;
                             scene._second = null;
-                            myClone.destroy();
+                            myClone?.destroy();
                         });
                     }
                 });
@@ -317,7 +319,7 @@ export class GameScene extends Phaser.Scene {
 
     addIngredient(item: any): void {
 
-        debugger;
+        //debugger;
 
         const opened: number[] = this.cache.obj.get("openedIds");
 
@@ -345,8 +347,6 @@ export class GameScene extends Phaser.Scene {
         if (oy > 0) {
             oy = 0;
         }
-
-        oy = Math.max(oy, -1 * this._scroll.displayHeight);
 
         this._scroll.childOY = oy;
     }

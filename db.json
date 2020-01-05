@@ -509,7 +509,8 @@
       "generation": 6,
       "name": "Habr",
       "points": 35,
-      "texture": "Может Habr уже и не торт, но другого торта не будет"
+      "texture": "habr",
+      "description": "Может Habr уже и не торт, но другого торта не будет"
     },
     {
       "id": 65,
@@ -684,7 +685,8 @@
       "generation": 8,
       "name": "QA",
       "points": 61,
-      "texture": "Хилеры колдунов XXI века, мы проверяли"
+      "texture": "qa",
+      "description": "Хилеры колдунов XXI века, мы проверяли"
     },
     {
       "id": 87,
@@ -1021,46 +1023,6 @@
       "points": 77,
       "texture": "drone",
       "description": "Все, кто тяжелее 250 грамм - беспилотные воздешные судна, а вы внешний пилот. Всё серьёзно!"
-    },
-    {
-      "id": 129,
-      "generation": 10,
-      "name": "Таня",
-      "points": 95,
-      "texture": "tanya",
-      "description": "Нарисовала все эти чудесные картиночки"
-    },
-    {
-      "id": 130,
-      "generation": 10,
-      "name": "Лиза",
-      "points": 95,
-      "texture": "liza",
-      "description": "Она не только придумала стенд для конфы, но и не позволила команде поубивать друг друга!"
-    },
-    {
-      "id": 131,
-      "generation": 10,
-      "name": "Антон",
-      "points": 95,
-      "texture": "anton",
-      "description": "если тебе кажутся нелогичными какие-то сочетания, жалуйся этому человеку"
-    },
-    {
-      "id": 132,
-      "generation": 10,
-      "name": "Женя",
-      "points": 95,
-      "texture": "genya",
-      "description": "Кодит на Unity за еду. В том и эту игру"
-    },
-    {
-      "id": 133,
-      "generation": 14,
-      "name": "Миша",
-      "points": 187,
-      "texture": "misha",
-      "description": "Создал для этой игры бриллиантовый бэкенд"
     }
   ],
   "blueprints": [
@@ -1708,31 +1670,6 @@
       "firstId": 68,
       "secondId": 21,
       "resultId": 128
-    },
-    {
-      "firstId": 127,
-      "secondId": 40,
-      "resultId": 129
-    },
-    {
-      "firstId": 127,
-      "secondId": 41,
-      "resultId": 130
-    },
-    {
-      "firstId": 127,
-      "secondId": 51,
-      "resultId": 131
-    },
-    {
-      "firstId": 127,
-      "secondId": 53,
-      "resultId": 132
-    },
-    {
-      "firstId": 127,
-      "secondId": 115,
-      "resultId": 133
     }
   ]
 }
