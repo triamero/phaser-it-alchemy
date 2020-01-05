@@ -1,6 +1,6 @@
 import * as Phaser from "phaser";
 import {BootScene, GameScene, HudScene, DescriptionScene} from "./scenes";
-import {IngredientPlugin, TweenIngredientPlugin} from "./game-objects";
+import {IngredientPlugin} from "./game-objects";
 
 class Main extends Phaser.Game {
     constructor() {
@@ -13,11 +13,6 @@ class Main extends Phaser.Game {
                     {
                         key: "IngredientPlugin",
                         plugin: IngredientPlugin,
-                        start: true
-                    },
-                    {
-                        key: "TweenIngredientPlugin",
-                        plugin: TweenIngredientPlugin,
                         start: true
                     }
                 ]

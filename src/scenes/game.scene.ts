@@ -1,6 +1,6 @@
 import * as Phaser from "phaser";
 import {Blueprint, Db, Helper} from "@it/shared";
-import {TweenIngredientGameObject} from "@it/game-objects";
+import {IngredientGameObject} from "@it/game-objects";
 import {DescriptionScene} from "@it/scenes/description.scene";
 
 export class GameScene extends Phaser.Scene {
@@ -12,9 +12,9 @@ export class GameScene extends Phaser.Scene {
     private _counter: number = 0;
 
     private _firstId: number;
-    private _first: TweenIngredientGameObject;
+    private _first: IngredientGameObject;
     private _secondId: number;
-    private _second: TweenIngredientGameObject;
+    private _second: IngredientGameObject;
 
     private _moving: boolean = false;
     private _merging: boolean = false;
@@ -119,7 +119,7 @@ export class GameScene extends Phaser.Scene {
 
                         const result = this._db.items.find(x => x.id === blueprint.resultId);
 
-                        const tw = (<any>this.add).tweenIngredient(300, 175, result.texture);
+                        const tw = (<any>this.add).ingredient(300, 175, result.texture);
 
                         this.tweens.add({
                             targets: [tw],
@@ -243,7 +243,7 @@ export class GameScene extends Phaser.Scene {
 
         const label = scene.rexUI.add.label({
             orientation: "y",
-            icon: scene.add.tweenIngredient(0, 0, item.texture, item.id),
+            icon: scene.add.ingredient(0, 0, item.texture, item.id),
             text: scene.add.text(0, 0, item.name, {align: "center", wordWrap: {width: 150, useAdvancedWrap: true}})
         });
 
@@ -259,9 +259,9 @@ export class GameScene extends Phaser.Scene {
 
                 scene._moving = true;
 
-                const me = <TweenIngredientGameObject><any>icon;
+                const me = <IngredientGameObject><any>icon;
 
-                const myClone = scene.add.tweenIngredient(me.x, me.y, me.texture, me.id);
+                const myClone = scene.add.ingredient(me.x, me.y, me.texture, me.id);
 
                 let x: number = null;
                 let y: number = null;
