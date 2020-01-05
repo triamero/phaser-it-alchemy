@@ -67,7 +67,7 @@ export class GameScene extends Phaser.Scene {
                 width: 600,
                 height: 450,
                 scrollMode: 0,
-                background: me.rexUI.add.roundRectangle(0, 0, 2, 2, 10, 0x4e342e),
+                //background: me.rexUI.add.roundRectangle(0, 0, 2, 2, 10, 0x4e342e),
 
                 panel: {
                     child: me.rexUI.add
@@ -246,7 +246,7 @@ export class GameScene extends Phaser.Scene {
 
     createIcon(scene: any, item: any) {
 
-        var txt = scene.add.text(0, 0, item.name, {align: "center", wordWrap:{width: 120, useAdvancedWrap: true}});
+        var txt = scene.add.text(0, 0, item.name, {align: "center", wordWrap:{width: 150, useAdvancedWrap: true}});
 
         const label = scene.rexUI.add.label({
             orientation: "y",
@@ -256,7 +256,7 @@ export class GameScene extends Phaser.Scene {
 
         const icon = label.getElement("icon");
 
-        icon.setSize(80, 85).setInteractive()
+        icon.setSize(150, 85).setInteractive()
 
             .on("pointerdown", () => {
 

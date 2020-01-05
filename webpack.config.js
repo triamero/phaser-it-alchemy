@@ -1,7 +1,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
     entry: {
@@ -31,7 +31,7 @@ module.exports = {
     },
 
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.json'],
+        extensions: [".ts", ".tsx", ".js", ".json"],
         plugins: [
             new TsconfigPathsPlugin({configFile: "tsconfig.json"})
         ]
@@ -42,11 +42,11 @@ module.exports = {
             {
                 test: /\.(tsx?)|(js)$/,
                 exclude: /node_modules/,
-                loader: 'ts-loader'
+                loader: "ts-loader"
             },
             { // For shaders
                 test: [/\.vert$/, /\.frag$/],
-                use: 'raw-loader'
+                use: "raw-loader"
             }
         ]
     },
@@ -60,13 +60,8 @@ module.exports = {
         new CopyWebpackPlugin([
             {
                 //Note:- No wildcard is specified hence will copy all files and folders
-                from: 'src/scripts', //Will resolve to RepoDir/src/assets
-                to: './' //Copies all files from above dest to dist/assets
-            },
-            {
-                //Wildcard is specified hence will copy only css files
-                from: 'src/css/*.css', //Will resolve to RepoDir/src/css and all *.css files from this directory
-                to: 'css'//Copies all matched css files from above dest to dist/css
+                from: "src/scripts", //Will resolve to RepoDir/src/assets
+                to: "./" //Copies all files from above dest to dist/assets
             }
         ])
     ]
