@@ -6,8 +6,8 @@ import {DescriptionScene} from "@it/scenes/description.scene";
 export class GameScene extends Phaser.Scene {
 
     private _scroll: any;
-    private _gridSizer: any;
     private _sizer: any;
+    private _gridSizer: any;
 
     private _counter: number = 0;
 
@@ -67,14 +67,9 @@ export class GameScene extends Phaser.Scene {
                 width: 600,
                 height: 450,
                 scrollMode: 0,
-                //background: me.rexUI.add.roundRectangle(0, 0, 2, 2, 10, 0x4e342e),
 
                 panel: {
-                    child: me.rexUI.add
-                        .sizer({
-                            orientation: "x",
-                        })
-                        .add(this.createTable(me), 0, "top", {right: 8,}, true),
+                    child: this.createTable(me),
                 },
 
                 scroller: {
