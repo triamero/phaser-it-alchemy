@@ -178,9 +178,9 @@
     },
     {
       "id": 23,
-      "generation": 4,
+      "generation": 5,
       "name": "Spark",
-      "points": 17,
+      "points": 25,
       "texture": "spark",
       "description": "Распределённо обрабатывает неструктурированные и слабоструктурированные данные"
     },
@@ -1118,7 +1118,7 @@
     },
     {
       "firstId": 19,
-      "secondId": 9,
+      "secondId": 14,
       "resultId": 23
     },
     {

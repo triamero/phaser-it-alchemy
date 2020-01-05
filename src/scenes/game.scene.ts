@@ -156,6 +156,8 @@ export class GameScene extends Phaser.Scene {
 
                             localStorage.setItem("openedIds", s);
 
+                            this.cache.obj.add("opened", [opnd.length, this._db.items.length]);
+
                             this.addIngredient(result);
 
                             this._recalculatePoints();
