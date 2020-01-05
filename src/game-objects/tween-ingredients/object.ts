@@ -12,6 +12,6 @@ export class TweenIngredientGameObject extends Phaser.GameObjects.Container {
         this.id = id;
         this.texture = texture;
 
-        this.add(new Phaser.GameObjects.Image(scene, 0, 0, texture));
+        this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "assets", texture));
     }
 }

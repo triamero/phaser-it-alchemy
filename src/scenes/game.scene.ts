@@ -28,6 +28,8 @@ export class GameScene extends Phaser.Scene {
 
     protected preload() {
 
+        this._recalculatePoints();
+
         this.scene.launch("hud");
 
         this.load.tilemapTiledJSON("game", "assets/alchemy.json");
@@ -35,7 +37,7 @@ export class GameScene extends Phaser.Scene {
 
         this.load.scenePlugin({
             key: "rexuiplugin",
-            url: "src/scripts/rexuiplugin.min.js",
+            url: "dist/rexuiplugin.min.js",
             sceneKey: 'rexUI'
         });
     }
@@ -49,7 +51,6 @@ export class GameScene extends Phaser.Scene {
         const tileset = map.addTilesetImage("tilebag", "game-tilemap", 90, 90);
 
         map.createStaticLayer("background", tileset, 0, 0);
-        map.createStaticLayer("foreground", tileset, 0, 0);
 
         const firstRect = new Phaser.Geom.Rectangle(30, 130, 90, 90);
         const anvilRect = new Phaser.Geom.Rectangle(255, 130, 90, 90);
@@ -58,8 +59,6 @@ export class GameScene extends Phaser.Scene {
         Helper.createRectangle(this, firstRect);
         Helper.createRectangle(this, anvilRect);
         Helper.createRectangle(this, secondRect);
-
-        this._recalculatePoints();
 
         this._scroll = me.rexUI.add
             .scrollablePanel({
@@ -73,9 +72,9 @@ export class GameScene extends Phaser.Scene {
                 panel: {
                     child: me.rexUI.add
                         .sizer({
-                            orientation: 'x',
+                            orientation: "x",
                         })
-                        .add(this.createTable(me), 0, 'top', {right: 8,}, true),
+                        .add(this.createTable(me), 0, "top", {right: 8,}, true),
                 },
 
                 scroller: {
@@ -240,16 +239,12 @@ export class GameScene extends Phaser.Scene {
 
         this._sizer = scene.rexUI.add
             .sizer({orientation: "y",})
-            .addBackground(
-                scene.rexUI.add.roundRectangle(0, 0, 0, 0, 0, undefined).setStrokeStyle(2, 0x7b5e57, 1)
-            )
             .add(this._gridSizer, 1, "center", 5, true);
 
         return this._sizer;
     }
 
     createIcon(scene: any, item: any) {
-        //debugger;
 
         var txt = scene.add.text(0, 0, item.name, {align: "center", wordWrap:{width: 120, useAdvancedWrap: true}});
 
