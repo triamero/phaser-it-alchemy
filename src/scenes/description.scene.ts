@@ -45,7 +45,7 @@ export class DescriptionScene extends Phaser.Scene {
                 fixedWidth: 300,
                 fontSize: "28px",
                 color: this._titleColor,
-                fontFamily: "monospaced",
+                fontFamily: "fixedsys",
                 align: "center",
                 wordWrap: {width: 280, useAdvancedWrap: true}
             }));
@@ -64,7 +64,7 @@ export class DescriptionScene extends Phaser.Scene {
                 fixedWidth: 300,
                 fontSize: "18px",
                 color: this._textColor,
-                fontFamily: "monospaced",
+                fontFamily: "fixedsys",
                 align: "center",
                 wordWrap: {width: 300, useAdvancedWrap: true}
             }));

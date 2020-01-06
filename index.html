@@ -13,9 +13,18 @@
         left: 0;
         right: 0;
     }
+
+    @font-face {
+        font-family: "fixedsys";
+        src: url('dist/fixedsys.ttf');
+        font-weight: 100;
+    }
+
 </style>
 
 <body>
+<div style="font-family:fixedsys; position: absolute; visibility:hidden;">.</div>
+
 <div style="width:100%" id="root"></div>
 </body>
 <script src="dist/main.js" charset="utf-8"></script>

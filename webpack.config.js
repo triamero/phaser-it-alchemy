@@ -59,9 +59,12 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         new CopyWebpackPlugin([
             {
-                //Note:- No wildcard is specified hence will copy all files and folders
                 from: "src/scripts", //Will resolve to RepoDir/src/assets
-                to: "./" //Copies all files from above dest to dist/assets
+                to: "./" //Copies all files from above dest to dist/
+            },
+            {
+                from: "assets", //Will resolve to RepoDir/src/assets
+                to: "./" //Copies all files from above dest to dist/
             }
         ])
     ]

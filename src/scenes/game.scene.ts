@@ -247,7 +247,7 @@ export class GameScene extends Phaser.Scene {
             orientation: "y",
             icon: scene.add.ingredient(0, 0, item.texture, item.id),
             text: scene.add.text(0, 0, item.name, {
-                fontFamily: '"monospaced"',
+                fontFamily: "fixedsys",
                 fontSize: "20px",
                 color: this._textColor,
                 align: "center",
@@ -316,8 +316,6 @@ export class GameScene extends Phaser.Scene {
     }
 
     addIngredient(item: any): void {
-
-        //debugger;
 
         const opened: number[] = this.cache.obj.get("openedIds");
 

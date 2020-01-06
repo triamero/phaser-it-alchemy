@@ -20,8 +20,8 @@ export class HudScene extends Phaser.Scene {
         const rect1 = this.add.rectangle(400, 30, 200, 30);
         const rect2 = this.add.rectangle(400, 59, 200, 30);
 
-        this._label1 = this.add.text(0, 2, "[Очки:0]", {fontFamily: '"monospaced"', fontSize: "26px", color: this._textColor});
-        this._label2 = this.add.text(0, 2, "[Открыто:0/0]", {fontFamily: '"monospaced"', fontSize: "26px", color: this._textColor});
+        this._label1 = this.add.text(0, 2, "[Очки:0]", {fontFamily: "fixedsys", fontSize: "26px", color: this._textColor});
+        this._label2 = this.add.text(0, 2, "[Открыто:0/0]", {fontFamily: "fixedsys", fontSize: "26px", color: this._textColor});
         this.add.container(300, 30, [rect1, this._label1]);
         this.add.container(300, 59, [rect2, this._label2]);
     }
