@@ -95,7 +95,6 @@ export class GameScene extends Phaser.Scene {
         this.input.on("wheel", this._onMouseWheel, this);
     }
 
-
     public update() {
 
         if (!this._merging && this._firstId && this._secondId) {
@@ -253,12 +252,16 @@ export class GameScene extends Phaser.Scene {
                 color: Constants.TextColor,
                 align: "center",
                 wordWrap: {width: 150, useAdvancedWrap: true}
-            })
+            }),
+            space:{
+                left: 15,
+                right: 15
+            }
         });
 
         const icon = label.getElement("icon");
 
-        icon.setSize(150, 85).setInteractive()
+        icon.setSize(85, 85).setInteractive()
 
             .on("pointerup", () => {
 
