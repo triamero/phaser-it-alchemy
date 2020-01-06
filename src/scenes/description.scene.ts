@@ -3,6 +3,9 @@ import {Item} from "@it/shared";
 
 export class DescriptionScene extends Phaser.Scene {
 
+    private _titleColor: string = "#ff7c24";
+    private _textColor: string = "#aff482";
+
     private item: Item;
     private readonly _handle: string;
 
@@ -20,9 +23,13 @@ export class DescriptionScene extends Phaser.Scene {
 
     create() {
 
+        this.input.setTopOnly(true);
+
         const parent = (<any>this).parent;
 
-        this.add.rectangle(parent.x, parent.y, 1200, 2200, 0x000000, 0.3);
+        this.add
+            .rectangle(parent.x, parent.y, 1200, 2200, 0x000000, 0.3)
+            .setInteractive();
 
         const container = this.add.container(300, 400);
 
@@ -30,30 +37,42 @@ export class DescriptionScene extends Phaser.Scene {
 
         container.add((<any>this).add.ingredient(0, -225, this.item.texture, this.item.id));
 
-        const text = this.add.text(
-            -120,
+        container.add(this.add.text(
+            -150,
             -160,
-            this.item.name,
+            [this.item.name, "\t", `[${this.item.points} очк.]`],
             {
+                fixedWidth: 300,
+                fontSize: "28px",
+                color: this._titleColor,
+                fontFamily: "monospaced",
                 align: "center",
                 wordWrap: {width: 280, useAdvancedWrap: true}
-            });
+            }));
 
-        container.add(text);
+        let descr = this.item.description;
+
+        if (!(descr.endsWith(".") || descr.endsWith("?") || descr.endsWith("!"))) {
+            descr += ".";
+        }
 
         container.add(this.add.text(
             -150,
-            -140,
+            -60,
             this.item.description,
             {
+                fixedWidth: 300,
+                fontSize: "18px",
+                color: this._textColor,
+                fontFamily: "monospaced",
                 align: "center",
                 wordWrap: {width: 300, useAdvancedWrap: true}
             }));
 
-        const btn = this.add.rectangle(100, 100, 20, 20, 0x000000);
+        const btn = this.add.rectangle(0, 200, 40, 40, 0x000000);
         btn.setInteractive();
 
-        btn.on("pointerdown", this.onClose, this);
+        btn.on("pointerup", this.onClose, this);
 
         container.add(btn);
     }

@@ -5,6 +5,8 @@ import {DescriptionScene} from "@it/scenes/description.scene";
 
 export class GameScene extends Phaser.Scene {
 
+    private _textColor: string = "#aff482";
+
     private _scroll: any;
     private _sizer: any;
     private _gridSizer: any;
@@ -65,7 +67,7 @@ export class GameScene extends Phaser.Scene {
                 x: 300,
                 y: 500,
                 width: 600,
-                height: 450,
+                height: 470,
                 scrollMode: 0,
 
                 panel: {
@@ -171,7 +173,7 @@ export class GameScene extends Phaser.Scene {
                 this.tweens.add({
                     targets: [this._second],
                     alpha: {from: 1, to: 0},
-                    ease: "Linear",
+                    ease: "Power2",
                     duration: 500,
                     onComplete: () => {
                         this._secondId = null;
@@ -244,7 +246,13 @@ export class GameScene extends Phaser.Scene {
         const label = scene.rexUI.add.label({
             orientation: "y",
             icon: scene.add.ingredient(0, 0, item.texture, item.id),
-            text: scene.add.text(0, 0, item.name, {align: "center", wordWrap: {width: 150, useAdvancedWrap: true}})
+            text: scene.add.text(0, 0, item.name, {
+                fontFamily: '"monospaced"',
+                fontSize: "20px",
+                color: this._textColor,
+                align: "center",
+                wordWrap: {width: 150, useAdvancedWrap: true}
+            })
         });
 
         const icon = label.getElement("icon");
