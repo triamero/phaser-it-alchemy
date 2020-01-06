@@ -22,7 +22,10 @@ export class BootScene extends Phaser.Scene {
 
     preload() {
         this.load.json("db", "db.json");
-        this.load.atlas("assets", "assets/textures.png", "assets/textures.json")
+        this.load.atlas("assets", "assets/textures.png", "assets/textures.json");
+        this.load.image("anvil", "assets/anvil.png");
+        this.load.image("ingr", "assets/ingr.png");
+        this.load.image("ok", "assets/ok.png");
     }
 
     create() {

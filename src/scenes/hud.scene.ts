@@ -12,18 +12,13 @@ export class HudScene extends Phaser.Scene {
 
         const info = new Phaser.Geom.Rectangle(30, 30, 55, 55);
 
-        this.add
-            .graphics({lineStyle: {width: 2, color: foregroundColor}, fillStyle: {color: backgroundColor}})
-            .fillRectShape(info)
-            .strokeRectShape(info);
+        const rect1 = this.add.rectangle(100, 30, 200, 30);
+        const rect2 = this.add.rectangle(100, 59, 200, 30);
 
-        const rect1 = this.add.rectangle(400, 30, 200, 30);
-        const rect2 = this.add.rectangle(400, 59, 200, 30);
-
-        this.add.container(300, 30, [rect1, this._label1]);
-        this.add.container(300, 59, [rect2, this._label2]);
         this._label1 = this.add.text(0, 2, "[Очки:0]", {fontFamily: "fixedsys", fontSize: "26px", color: Constants.TextColor});
         this._label2 = this.add.text(0, 2, "[Открыто:0/0]", {fontFamily: "fixedsys", fontSize: "26px", color: Constants.TextColor});
+        this.add.container(30, 30, [rect1, this._label1]);
+        this.add.container(30, 59, [rect2, this._label2]);
     }
 
 

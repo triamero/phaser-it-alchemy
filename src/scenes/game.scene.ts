@@ -52,13 +52,9 @@ export class GameScene extends Phaser.Scene {
 
         map.createStaticLayer("background", tileset, 0, 0);
 
-        const firstRect = new Phaser.Geom.Rectangle(30, 130, 90, 90);
-        const anvilRect = new Phaser.Geom.Rectangle(255, 130, 90, 90);
-        const secondRect = new Phaser.Geom.Rectangle(480, 130, 90, 90);
-
-        Helper.createRectangle(this, firstRect);
-        Helper.createRectangle(this, anvilRect);
-        Helper.createRectangle(this, secondRect);
+        this.add.sprite(75, 175, "ingr").setAlpha(0.85);
+        this.add.sprite(300, 175, "anvil");
+        this.add.sprite(525, 175, "ingr").setAlpha(0.85);
 
         this._scroll = me.rexUI.add
             .scrollablePanel({
@@ -69,7 +65,7 @@ export class GameScene extends Phaser.Scene {
                 scrollMode: 0,
 
                 panel: {
-                    child: this.createTable(me),
+                    child: this._createTable(me),
                 },
 
                 scroller: {
@@ -89,11 +85,11 @@ export class GameScene extends Phaser.Scene {
             })
             .layout();
 
-        this.input.on("wheel", this.onMouseWheel, this);
+        this.input.on("wheel", this._onMouseWheel, this);
     }
 
 
-    update() {
+    public update() {
 
         if (!this._merging && this._firstId && this._secondId) {
 
@@ -152,7 +148,7 @@ export class GameScene extends Phaser.Scene {
 
                             this.cache.obj.add("opened", [opnd.length, this._db.items.length]);
 
-                            this.addIngredient(result);
+                            this._addIngredient(result);
 
                             this._recalculatePoints();
                         }
@@ -209,7 +205,7 @@ export class GameScene extends Phaser.Scene {
         this.cache.obj.add("points", points);
     }
 
-    private createTable(scene: any) {
+    private _createTable(scene: any) {
 
         const opened: number[] = this.cache.obj.get("openedIds");
 
@@ -224,7 +220,7 @@ export class GameScene extends Phaser.Scene {
 
             const item = items[i];
 
-            const icon = this.createIcon(scene, item);
+            const icon = this._createIcon(scene, item);
 
             const column = i % 4;
             const row = Math.floor(i / 4);
@@ -239,7 +235,7 @@ export class GameScene extends Phaser.Scene {
         return this._sizer;
     }
 
-    createIcon(scene: any, item: any) {
+    private _createIcon(scene: any, item: any) {
 
         const label = scene.rexUI.add.label({
             orientation: "y",
@@ -313,11 +309,11 @@ export class GameScene extends Phaser.Scene {
         return label;
     }
 
-    addIngredient(item: any): void {
+    private _addIngredient(item: any): void {
 
         const opened: number[] = this.cache.obj.get("openedIds");
 
-        const icon = this.createIcon(this, item);
+        const icon = this._createIcon(this, item);
 
         const index = opened.length - 1;
 
@@ -334,7 +330,7 @@ export class GameScene extends Phaser.Scene {
         this._scroll.layout();
     }
 
-    onMouseWheel(pointer: any, event: any[], x: number, y: number): void {
+    private _onMouseWheel(pointer: any, event: any[], x: number, y: number): void {
 
         let oy = this._scroll.childOY - y / 2;
 

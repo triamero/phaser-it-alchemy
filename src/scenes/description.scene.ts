@@ -32,7 +32,9 @@ export class DescriptionScene extends Phaser.Scene {
 
         container.add(this.add.rectangle(0, 0, 340, 600, 0x123123, 1));
 
+        container.add(this.add.sprite(0, -225, "anvil").setAlpha(0.85));
         container.add((<any>this).add.ingredient(0, -225, this.item.texture, this.item.id));
+
 
         container.add(this.add.text(
             -150,
@@ -56,7 +58,6 @@ export class DescriptionScene extends Phaser.Scene {
         container.add(this.add.text(
             -150,
             -60,
-            this.item.description,
             descr,
             {
                 fixedWidth: 300,
@@ -67,7 +68,7 @@ export class DescriptionScene extends Phaser.Scene {
                 wordWrap: {width: 300, useAdvancedWrap: true}
             }));
 
-        const btn = this.add.rectangle(0, 200, 40, 40, 0x000000);
+        const btn = this.add.sprite(0, 200, "ok");
         btn.setInteractive();
 
         btn.on("pointerup", this.onClose, this);

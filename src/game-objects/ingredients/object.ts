@@ -12,6 +12,6 @@ export class IngredientGameObject extends Phaser.GameObjects.Container {
         this.id = id;
         this.texture = texture;
 
-        this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "assets", texture));
+        this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "assets", texture).setAlpha(0.85));
     }
 }
