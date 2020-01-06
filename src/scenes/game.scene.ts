@@ -1,11 +1,9 @@
 import * as Phaser from "phaser";
-import {Blueprint, Db, Helper} from "@it/shared";
+import {Blueprint, Constants, Db} from "@it/shared";
 import {IngredientGameObject} from "@it/game-objects";
 import {DescriptionScene} from "@it/scenes/description.scene";
 
 export class GameScene extends Phaser.Scene {
-
-    private _textColor: string = "#aff482";
 
     private _scroll: any;
     private _sizer: any;
@@ -249,7 +247,7 @@ export class GameScene extends Phaser.Scene {
             text: scene.add.text(0, 0, item.name, {
                 fontFamily: "fixedsys",
                 fontSize: "20px",
-                color: this._textColor,
+                color: Constants.TextColor,
                 align: "center",
                 wordWrap: {width: 150, useAdvancedWrap: true}
             })

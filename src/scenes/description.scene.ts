@@ -1,10 +1,7 @@
 import * as Phaser from "phaser";
-import {Item} from "@it/shared";
+import {Constants, Item} from "@it/shared";
 
 export class DescriptionScene extends Phaser.Scene {
-
-    private _titleColor: string = "#ff7c24";
-    private _textColor: string = "#aff482";
 
     private item: Item;
     private readonly _handle: string;
@@ -44,7 +41,7 @@ export class DescriptionScene extends Phaser.Scene {
             {
                 fixedWidth: 300,
                 fontSize: "28px",
-                color: this._titleColor,
+                color: Constants.TitleColor,
                 fontFamily: "fixedsys",
                 align: "center",
                 wordWrap: {width: 280, useAdvancedWrap: true}
@@ -60,10 +57,11 @@ export class DescriptionScene extends Phaser.Scene {
             -150,
             -60,
             this.item.description,
+            descr,
             {
                 fixedWidth: 300,
                 fontSize: "18px",
-                color: this._textColor,
+                color: Constants.TextColor,
                 fontFamily: "fixedsys",
                 align: "center",
                 wordWrap: {width: 300, useAdvancedWrap: true}
