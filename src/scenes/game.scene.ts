@@ -40,7 +40,7 @@ export class GameScene extends Phaser.Scene {
         this.load.scenePlugin({
             key: "rexuiplugin",
             url: "dist/rexuiplugin.min.js",
-            sceneKey: 'rexUI'
+            sceneKey: "rexUI"
         });
     }
 

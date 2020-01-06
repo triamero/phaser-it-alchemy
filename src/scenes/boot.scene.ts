@@ -3,8 +3,6 @@ import {Db} from "@it/shared";
 
 export class BootScene extends Phaser.Scene {
     init() {
-        console.log("Booting...");
-
         let value = localStorage.getItem("openedIds");
 
         if (!value) {
@@ -20,8 +18,6 @@ export class BootScene extends Phaser.Scene {
         this.cache.obj.add("openedIds", opened);
 
         localStorage.setItem("openedIds", JSON.stringify(opened));
-
-        console.log("Booting completed");
     }
 
     preload() {
