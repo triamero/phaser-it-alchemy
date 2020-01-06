@@ -131,6 +131,6 @@ const maxGeneration = Math.max.apply(null, items.map(x => x.generation));
 
 console.log("Max generation:", maxGeneration);
 
-const resultContent = JSON.stringify(obj, null, 2);
+const resultContent = JSON.stringify(obj);
 
 fs.writeFileSync("db.json", resultContent);
