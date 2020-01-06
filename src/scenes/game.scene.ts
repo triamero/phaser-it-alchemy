@@ -260,7 +260,7 @@ export class GameScene extends Phaser.Scene {
 
         icon.setSize(150, 85).setInteractive()
 
-            .on("pointerdown", () => {
+            .on("pointerup", () => {
 
                 if (scene._moving || scene._merging || scene._clearing) {
                     return;
@@ -302,7 +302,7 @@ export class GameScene extends Phaser.Scene {
                         }
 
                         myClone.setSize(me.height, me.width).setInteractive();
-                        myClone.on("pointerdown", () => {
+                        myClone.on("pointerup", () => {
                             scene._firstId = null;
                             scene._first = null;
                             scene._secondId = null;
