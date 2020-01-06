@@ -2,6 +2,9 @@ import * as Phaser from "phaser";
 import {Db} from "@it/shared";
 
 export class BootScene extends Phaser.Scene {
+
+    private _showInfo: boolean = false;
+
     init() {
         let value = localStorage.getItem("openedIds");
 
@@ -13,6 +16,7 @@ export class BootScene extends Phaser.Scene {
 
         if (opened.length < 4) {
             opened = [1, 2, 3, 4];
+            this._showInfo = true;
         }
 
         this.cache.obj.add("openedIds", opened);
@@ -26,6 +30,10 @@ export class BootScene extends Phaser.Scene {
         this.load.image("anvil", "assets/anvil.png");
         this.load.image("ingr", "assets/ingr.png");
         this.load.image("ok", "assets/ok.png");
+        this.load.image("info", "assets/info.png");
+
+        this.load.tilemapTiledJSON("game", "assets/alchemy.json");
+        this.load.image("game-tilemap", "assets/tilebag.png");
     }
 
     create() {
@@ -36,6 +44,10 @@ export class BootScene extends Phaser.Scene {
         this.cache.obj.add("opened", [openedIds.length, db.items.length]);
         this.cache.obj.add("points", 0);
 
-        this.scene.start("game");
+        if (this._showInfo) {
+            this.scene.start("info");
+        } else {
+            this.scene.start("game");
+        }
     }
 }

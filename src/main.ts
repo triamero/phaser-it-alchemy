@@ -1,5 +1,5 @@
 import * as Phaser from "phaser";
-import {BootScene, GameScene, HudScene, DescriptionScene} from "./scenes";
+import {BootScene, GameScene, HudScene, DescriptionScene, InfoScene} from "./scenes";
 import {IngredientPlugin} from "./game-objects";
 
 class Main extends Phaser.Game {
@@ -24,6 +24,7 @@ class Main extends Phaser.Game {
         this.scene.add("game", GameScene, false);
         this.scene.add("hud", HudScene, false);
         this.scene.add("description", DescriptionScene, false);
+        this.scene.add("info", InfoScene, false);
         this.scene.start("boot");
 
     }

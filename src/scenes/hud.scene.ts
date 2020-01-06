@@ -7,16 +7,19 @@ export class HudScene extends Phaser.Scene {
     private _label2: Phaser.GameObjects.Text = null;
 
     preload() {
-        const backgroundColor = 0x0d084c;
-        const foregroundColor = 0x1f1aad;
-
-        const info = new Phaser.Geom.Rectangle(30, 30, 55, 55);
-
         const rect1 = this.add.rectangle(100, 30, 200, 30);
         const rect2 = this.add.rectangle(100, 59, 200, 30);
 
-        this._label1 = this.add.text(0, 2, "[Очки:0]", {fontFamily: "fixedsys", fontSize: "26px", color: Constants.TextColor});
-        this._label2 = this.add.text(0, 2, "[Открыто:0/0]", {fontFamily: "fixedsys", fontSize: "26px", color: Constants.TextColor});
+        this._label1 = this.add.text(0, 2, "[Очки:0]", {
+            fontFamily: "fixedsys",
+            fontSize: "26px",
+            color: Constants.TextColor
+        });
+        this._label2 = this.add.text(0, 2, "[Открыто:0/0]", {
+            fontFamily: "fixedsys",
+            fontSize: "26px",
+            color: Constants.TextColor
+        });
         this.add.container(30, 30, [rect1, this._label1]);
         this.add.container(30, 59, [rect2, this._label2]);
     }

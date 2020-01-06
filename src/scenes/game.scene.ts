@@ -32,9 +32,6 @@ export class GameScene extends Phaser.Scene {
 
         this.scene.launch("hud");
 
-        this.load.tilemapTiledJSON("game", "assets/alchemy.json");
-        this.load.image("game-tilemap", "assets/tilebag.png");
-
         this.load.scenePlugin({
             key: "rexuiplugin",
             url: "dist/rexuiplugin.min.js",
@@ -51,6 +48,16 @@ export class GameScene extends Phaser.Scene {
         const tileset = map.addTilesetImage("tilebag", "game-tilemap", 90, 90);
 
         map.createStaticLayer("background", tileset, 0, 0);
+
+        this.add.sprite(535, 55, "info")
+            .setScale(0.5)
+            .setSize(80, 80)
+
+            .setInteractive()
+            .on("pointerup", () => {
+                this.scene.pause("hud");
+                this.scene.start("info");
+            });
 
         this.add.sprite(75, 175, "ingr").setAlpha(0.85);
         this.add.sprite(300, 175, "anvil");
