@@ -10,8 +10,14 @@ export class IngredientGameObject extends Phaser.GameObjects.Container {
         super(scene, x, y);
 
         this.id = id;
-        this.texture = texture;
 
-        this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "assets", texture).setAlpha(0.85));
+
+        if (id > 0) {
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "assets", texture).setAlpha(0.85));
+            this.texture = texture;
+        } else {
+            this.add(new Phaser.GameObjects.Sprite(scene, 0, 0, "triamero").setAlpha(0.85));
+            this.texture = "triamero";
+        }
     }
 }

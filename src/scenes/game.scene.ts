@@ -1,5 +1,5 @@
 import * as Phaser from "phaser";
-import {Blueprint, Constants, Db} from "@it/shared";
+import {Blueprint, Constants, Db, Egg} from "@it/shared";
 import {IngredientGameObject} from "@it/game-objects";
 import {DescriptionScene} from "@it/scenes/description.scene";
 
@@ -22,8 +22,12 @@ export class GameScene extends Phaser.Scene {
 
     private _db: Db = null;
 
+    private _e: Egg = new Egg();
+
     protected init() {
         this._db = this.cache.json.get("db");
+
+        this._e.update(this);
     }
 
     protected preload() {
@@ -97,6 +101,8 @@ export class GameScene extends Phaser.Scene {
 
     public update() {
 
+        this._e.update(this);
+
         if (!this._merging && this._firstId && this._secondId) {
 
             const blueprint = this._getBlueprint();
@@ -121,7 +127,7 @@ export class GameScene extends Phaser.Scene {
 
                         const result = this._db.items.find(x => x.id === blueprint.resultId);
 
-                        const tw = (<any>this.add).ingredient(300, 175, result.texture);
+                        const tw = (<any>this.add).ingredient(300, 175, result.texture, result.id);
 
                         this.tweens.add({
                             targets: [tw],
@@ -139,13 +145,12 @@ export class GameScene extends Phaser.Scene {
 
                         if (!opnd.some(x => x === result.id)) {
 
-                            const handle = "description" + this._counter++;
+                            this._showDescription(result);
 
-                            const win = this.add.zone(0, 0, 600, 800);
+                            if (result.id < 0) {
+                                return;
+                            }
 
-                            const scene = new DescriptionScene(handle, win);
-
-                            this.scene.add(handle, scene, true, result);
                             opnd.push(result.id);
 
                             const s = JSON.stringify(opnd);
@@ -251,21 +256,33 @@ export class GameScene extends Phaser.Scene {
                 fontSize: "20px",
                 color: Constants.TextColor,
                 align: "center",
-                wordWrap: {width: 150, useAdvancedWrap: true}
+                wordWrap: {width: 90, useAdvancedWrap: true}
             }),
-            space:{
-                left: 15,
-                right: 15
+            space: {
+                left: 30,
+                right: 30
             }
         });
 
         const icon = label.getElement("icon");
 
         icon.setSize(85, 85).setInteractive()
+            .on("pointerdown", function () {
+
+                icon.time = new Date();
+
+            })
 
             .on("pointerup", () => {
 
                 if (scene._moving || scene._merging || scene._clearing) {
+                    return;
+                }
+
+                const time = new Date().getTime() - icon.time.getTime();
+
+                if (time > 200) {
+                    this._showDescription(item);
                     return;
                 }
 
@@ -351,5 +368,15 @@ export class GameScene extends Phaser.Scene {
         }
 
         this._scroll.childOY = oy;
+    }
+
+    private _showDescription(item: any): void {
+        const handle = "description" + this._counter++;
+
+        const win = this.add.zone(0, 0, 600, 800);
+
+        const scene = new DescriptionScene(handle, win);
+
+        this.scene.add(handle, scene, true, item);
     }
 }
