@@ -1,6 +1,7 @@
 # User-defined
 
 .idea
+
 dist/*.hot-update.*
 
 # Logs
