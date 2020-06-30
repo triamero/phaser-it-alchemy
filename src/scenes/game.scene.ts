@@ -47,25 +47,24 @@ export class GameScene extends Phaser.Scene {
 
         const me: any = this;
 
-        const map = this.make.tilemap({key: "game", height: +this.game.config.height, width: +this.game.config.width});
-
-        const tileset = map.addTilesetImage("tilebag", "game-tilemap", 90, 90);
-
-        map.createStaticLayer("background", tileset, 0, 0);
-
-        this.add.sprite(535, 55, "info")
+        this.add.sprite(535, 55, "controls", "info")
             .setScale(0.5)
             .setSize(80, 80)
 
             .setInteractive()
             .on("pointerup", () => {
-                this.scene.pause("hud");
+                this.scene.stop("hud");
                 this.scene.start("info");
             });
 
-        this.add.sprite(75, 175, "ingr").setAlpha(0.85);
-        this.add.sprite(300, 175, "anvil");
-        this.add.sprite(525, 175, "ingr").setAlpha(0.85);
+        this.add.sprite(75, 175, "controls", "ingr").setAlpha(0.85);
+        this.add.sprite(300, 175, "controls", "anvil");
+        this.add.sprite(525, 175, "controls", "ingr").setAlpha(0.85);
+
+        this.add.sprite(30, 280, "controls", "corner").setScale(0.5).setRotation(-Math.PI / 2);
+        this.add.sprite(570, 280, "controls", "corner").setScale(0.5);
+        this.add.sprite(570, 720, "controls", "corner").setScale(0.5).setRotation(Math.PI / 2);
+        this.add.sprite(30, 720, "controls", "corner").setScale(0.5).setRotation(Math.PI);
 
         this._scroll = me.rexUI.add
             .scrollablePanel({

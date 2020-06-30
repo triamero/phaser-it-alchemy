@@ -24,6 +24,9 @@ class Main extends Phaser.Game {
                         start: true
                     }
                 ]
+            },
+            render: {
+                transparent: true
             }
         };
         super(config);

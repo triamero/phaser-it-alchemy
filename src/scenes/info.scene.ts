@@ -4,11 +4,6 @@ import {Constants} from "@it/shared";
 export class InfoScene extends Phaser.Scene {
 
     protected create() {
-        const map = this.make.tilemap({key: "game", height: +this.game.config.height, width: +this.game.config.width});
-
-        const tileset = map.addTilesetImage("tilebag", "game-tilemap", 90, 90);
-
-        map.createStaticLayer("background", tileset, 0, 0);
 
         const text = "Это старая добрая Алхимия, только про IT."
             + " Собирай из начальных элементов всё новые и новые сущности."
@@ -21,7 +16,7 @@ export class InfoScene extends Phaser.Scene {
             wordWrap: {width: 500, useAdvancedWrap: true}
         });
 
-        this.add.sprite(300, 750, "ok")
+        this.add.sprite(300, 750, "controls", "ok")
             .setSize(40, 40)
             .setInteractive()
             .on("pointerup", () => {
