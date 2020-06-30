@@ -27,13 +27,7 @@ export class BootScene extends Phaser.Scene {
     preload() {
         this.load.json("db", "db.json");
         this.load.atlas("assets", "dist/textures.png", "dist/textures.json");
-        this.load.image("anvil", "dist/anvil.png");
-        this.load.image("ingr", "dist/ingr.png");
-        this.load.image("ok", "dist/ok.png");
-        this.load.image("info", "dist/info.png");
-
-        this.load.tilemapTiledJSON("game", "assets/alchemy.json");
-        this.load.image("game-tilemap", "assets/tilebag.png");
+        this.load.atlas("controls", "dist/controls.png", "dist/controls.json");
     }
 
     create() {
