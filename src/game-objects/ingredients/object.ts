@@ -1,5 +1,3 @@
-import * as Phaser from "phaser";
-
 export class IngredientGameObject extends Phaser.GameObjects.Container {
 
     public readonly id: number;

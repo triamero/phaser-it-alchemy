@@ -1,4 +1,3 @@
-import * as Phaser from "phaser";
 import {IngredientGameObject} from "./object";
 
 export class IngredientPlugin extends Phaser.Plugins.BasePlugin {
