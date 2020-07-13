@@ -1,6 +1,5 @@
 import * as Phaser from "phaser";
 import {BootScene, DescriptionScene, GameScene, HudScene, InfoScene} from "./scenes";
-import {IngredientPlugin} from "./game-objects";
 
 class Main extends Phaser.Game {
     constructor() {
@@ -16,15 +15,6 @@ class Main extends Phaser.Game {
             },
             width: 600,
             height: 800,
-            plugins: {
-                global: [
-                    {
-                        key: "IngredientPlugin",
-                        plugin: IngredientPlugin,
-                        start: true
-                    }
-                ]
-            },
             render: {
                 transparent: true
             }
@@ -42,5 +32,5 @@ class Main extends Phaser.Game {
 }
 
 window.onload = () => {
-    const GameApp: Phaser.Game = new Main();
+    (<any>window).game = new Main();
 };

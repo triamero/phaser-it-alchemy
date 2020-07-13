@@ -1,8 +1,9 @@
-import {Blueprint, Item} from "@it/shared/models/index";
+import {BlueprintModel} from "./blueprint.model";
+import {ElementModel} from "./element.model";
 
-export interface Db {
-    items: Item[];
-    blueprints: Blueprint[];
+export interface DbModel {
+    elements: ElementModel[];
+    blueprints: BlueprintModel[];
 }
 
 

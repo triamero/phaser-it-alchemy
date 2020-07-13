@@ -1,10 +1,11 @@
 import * as Phaser from "phaser";
-import {Constants, Item} from "@it/shared";
+import {Constants, ElementModel} from "@it/shared";
 
 export class DescriptionScene extends Phaser.Scene {
 
-    private item: Item;
     private readonly _handle: string;
+
+    private _element: ElementModel;
 
     constructor(handle: string, parent: any) {
         super(handle);
@@ -14,8 +15,8 @@ export class DescriptionScene extends Phaser.Scene {
         (<any>this).parent = parent;
     }
 
-    init(item: Item) {
-        this.item = item;
+    init(element: ElementModel) {
+        this._element = element;
     }
 
     create() {
@@ -33,13 +34,13 @@ export class DescriptionScene extends Phaser.Scene {
         container.add(this.add.rectangle(0, 0, 340, 600, 0x123123, 1));
 
         container.add(this.add.sprite(0, -225, "controls", "anvil").setAlpha(0.85));
-        container.add((<any>this).add.ingredient(0, -225, this.item.texture, this.item.id));
+        container.add((<any>this).add.ingredient(0, -225, this._element.texture, this._element.id));
 
 
         container.add(this.add.text(
             -150,
             -160,
-            [this.item.name, "\t", `[${this.item.points} очк.]`],
+            [this._element.name, "\t", `[${this._element.points} очк.]`],
             {
                 fixedWidth: 300,
                 fontSize: "28px",
@@ -49,7 +50,7 @@ export class DescriptionScene extends Phaser.Scene {
                 wordWrap: {width: 280, useAdvancedWrap: true}
             }));
 
-        let descr = this.item.description;
+        let descr = this._element.description;
 
         if (!(descr.endsWith(".") || descr.endsWith("?") || descr.endsWith("!"))) {
             descr += ".";

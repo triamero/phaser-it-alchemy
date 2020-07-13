@@ -18,8 +18,8 @@ jobs:
         uses: actions/checkout@v2
       - name: Get release version
         run: |
-          echo "::set-env name=m8_version::`node get-version.js`"
-          echo ${m8_version}
+          echo "::set-env name=it_version::`node get-version.js`"
+          echo ${it_version}
       - name: Build
         uses: actions/setup-node@v1
         with:
@@ -32,8 +32,8 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add dist/*
-          git commit -m "Release version ${m8_version}" -a
-          git tag ${m8_version}
+          git commit -m "Release version ${it_version}" -a
+          git tag ${it_version}
       - name: Push
         uses: ad-m/github-push-action@v0.6.0
         with:

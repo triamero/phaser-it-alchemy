@@ -1,4 +1,4 @@
-export interface Item {
+export interface ElementModel {
     id: number;
     name: string;
     generation: number;

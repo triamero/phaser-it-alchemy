@@ -1,7 +1,6 @@
-import * as Phaser from "phaser";
-import {Blueprint, Constants, Db, Egg} from "@it/shared";
-import {IngredientGameObject} from "@it/game-objects";
-import {DescriptionScene} from "@it/scenes/description.scene";
+import {ElementObject} from "@it/objects";
+import {BlueprintModel, Constants, DbModel, Egg} from "@it/shared";
+import {DescriptionScene} from "./description.scene";
 
 export class GameScene extends Phaser.Scene {
 
@@ -12,40 +11,28 @@ export class GameScene extends Phaser.Scene {
     private _counter: number = 0;
 
     private _firstId: number;
-    private _first: IngredientGameObject;
+    private _first: ElementObject;
     private _secondId: number;
-    private _second: IngredientGameObject;
+    private _second: ElementObject;
 
     private _moving: boolean = false;
     private _merging: boolean = false;
     private _clearing: boolean = false;
 
-    private _db: Db = null;
-
-    private _e: Egg = new Egg();
+    private _db: DbModel = null;
 
     protected init() {
         this._db = this.cache.json.get("db");
 
-        this._e.update(this);
+        Egg.update(this);
     }
 
     protected preload() {
-
         this._recalculatePoints();
-
         this.scene.launch("hud");
-
-        this.load.scenePlugin({
-            key: "rexuiplugin",
-            url: "dist/rexuiplugin.min.js",
-            sceneKey: "rexUI"
-        });
     }
 
     protected create() {
-
-        const me: any = this;
 
         this.add.sprite(535, 55, "controls", "info")
             .setScale(0.5)
@@ -66,7 +53,7 @@ export class GameScene extends Phaser.Scene {
         this.add.sprite(570, 720, "controls", "corner").setScale(0.5).setRotation(Math.PI / 2);
         this.add.sprite(30, 720, "controls", "corner").setScale(0.5).setRotation(Math.PI);
 
-        this._scroll = me.rexUI.add
+        this._scroll = this.rexUI.add
             .scrollablePanel({
                 x: 300,
                 y: 500,
@@ -75,7 +62,7 @@ export class GameScene extends Phaser.Scene {
                 scrollMode: 0,
 
                 panel: {
-                    child: this._createTable(me),
+                    child: this._createTable(),
                 },
 
                 scroller: {
@@ -100,7 +87,7 @@ export class GameScene extends Phaser.Scene {
 
     public update() {
 
-        this._e.update(this);
+        Egg.update(this);
 
         if (!this._merging && this._firstId && this._secondId) {
 
@@ -124,7 +111,7 @@ export class GameScene extends Phaser.Scene {
                         this._second?.destroy();
                         this._second = null;
 
-                        const result = this._db.items.find(x => x.id === blueprint.resultId);
+                        const result = this._db.elements.find(x => x.id === blueprint.resultId);
 
                         const tw = (<any>this.add).ingredient(300, 175, result.texture, result.id);
 
@@ -156,7 +143,7 @@ export class GameScene extends Phaser.Scene {
 
                             localStorage.setItem("openedIds", s);
 
-                            this.cache.obj.add("opened", [opnd.length, this._db.items.length]);
+                            this.cache.obj.add("opened", [opnd.length, this._db.elements.length]);
 
                             this._addIngredient(result);
 
@@ -191,7 +178,7 @@ export class GameScene extends Phaser.Scene {
         }
     }
 
-    private _getBlueprint(): Blueprint {
+    private _getBlueprint(): BlueprintModel {
 
         const front = this._db.blueprints
             .find(x => x.firstId == this._firstId && x.secondId === this._secondId);
@@ -208,29 +195,29 @@ export class GameScene extends Phaser.Scene {
         const openedIds: number[] = this.cache.obj.get("openedIds");
 
         const points = openedIds
-            .map(x => this._db.items.find(z => z.id === x))
+            .map(x => this._db.elements.find(z => z.id === x))
             .map(x => x.points)
             .reduce((prev, curr) => prev + curr);
 
         this.cache.obj.add("points", points);
     }
 
-    private _createTable(scene: any) {
+    private _createTable() {
 
         const opened: number[] = this.cache.obj.get("openedIds");
 
-        this._gridSizer = scene.rexUI.add.gridSizer({
+        this._gridSizer = this.rexUI.add.gridSizer({
             column: 4,
             row: Math.floor(opened.length / 4) + 1,
         });
 
-        const items = opened.map(x => this._db.items.find(i => i.id === x));
+        const items = opened.map(x => this._db.elements.find(i => i.id === x));
 
         for (let i = 0, cnt = items.length; i < cnt; i++) {
 
             const item = items[i];
 
-            const icon = this._createIcon(scene, item);
+            const icon = this._createIcon(item);
 
             const column = i % 4;
             const row = Math.floor(i / 4);
@@ -238,19 +225,19 @@ export class GameScene extends Phaser.Scene {
             this._gridSizer.add(icon, column, row, "top", 2, true);
         }
 
-        this._sizer = scene.rexUI.add
-            .sizer({orientation: "y",})
+        this._sizer = this.rexUI.add
+            .sizer({orientation: "y"})
             .add(this._gridSizer, 1, "center", 5, true);
 
         return this._sizer;
     }
 
-    private _createIcon(scene: any, item: any) {
+    private _createIcon(item: any) {
 
-        const label = scene.rexUI.add.label({
+        const label = this.rexUI.add.label({
             orientation: "y",
-            icon: scene.add.ingredient(0, 0, item.texture, item.id),
-            text: scene.add.text(0, 0, item.name, {
+            icon: this.add.ingredient(0, 0, item.texture, item.id),
+            text: this.add.text(0, 0, item.name, {
                 fontFamily: "fixedsys",
                 fontSize: "20px",
                 color: Constants.TextColor,
@@ -274,7 +261,7 @@ export class GameScene extends Phaser.Scene {
 
             .on("pointerup", () => {
 
-                if (scene._moving || scene._merging || scene._clearing) {
+                if (this._moving || this._merging || this._clearing) {
                     return;
                 }
 
@@ -285,24 +272,25 @@ export class GameScene extends Phaser.Scene {
                     return;
                 }
 
-                scene._moving = true;
+                this._moving = true;
 
-                const me = <IngredientGameObject><any>icon;
+                const me = <ElementObject><any>icon;
 
-                const myClone = scene.add.ingredient(me.x, me.y, me.texture, me.id);
+                const myClone = new ElementObject(this, me.x, me.y, me.id, me.name, "assets", me.texture);
+                this.add.existing(myClone);
 
                 let x: number = null;
                 let y: number = null;
 
-                if (!scene._firstId) {
+                if (!this._firstId) {
                     x = 75;
                     y = 175;
-                } else if (!scene._secondId) {
+                } else if (!this._secondId) {
                     x = 525;
                     y = 175;
                 }
 
-                scene.tweens.add({
+                this.tweens.add({
                     targets: [myClone],
                     duration: 600,
                     x: x,
@@ -310,22 +298,22 @@ export class GameScene extends Phaser.Scene {
                     ease: "Power2",
                     onComplete: () => {
 
-                        scene._moving = false;
+                        this._moving = false;
 
-                        if (!scene._firstId) {
-                            scene._firstId = me.id;
-                            scene._first = myClone;
-                        } else if (!scene._secondId) {
-                            scene._secondId = me.id;
-                            scene._second = myClone;
+                        if (!this._firstId) {
+                            this._firstId = me.id;
+                            this._first = myClone;
+                        } else if (!this._secondId) {
+                            this._secondId = me.id;
+                            this._second = myClone;
                         }
 
                         myClone.setSize(me.height, me.width).setInteractive();
                         myClone.on("pointerup", () => {
-                            scene._firstId = null;
-                            scene._first = null;
-                            scene._secondId = null;
-                            scene._second = null;
+                            this._firstId = null;
+                            this._first = null;
+                            this._secondId = null;
+                            this._second = null;
                             myClone?.destroy();
                         });
                     }
@@ -339,7 +327,7 @@ export class GameScene extends Phaser.Scene {
 
         const opened: number[] = this.cache.obj.get("openedIds");
 
-        const icon = this._createIcon(this, item);
+        const icon = this._createIcon(item);
 
         const index = opened.length - 1;
 
@@ -356,6 +344,7 @@ export class GameScene extends Phaser.Scene {
         this._scroll.layout();
     }
 
+    // noinspection JSUnusedLocalSymbols
     private _onMouseWheel(pointer: any, event: any[], x: number, y: number): void {
 
         let oy = this._scroll.childOY - y / 2;
